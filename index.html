@@ -16,18 +16,9 @@
         header { background-color: white; padding: 15px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
         .logo-img { max-height: 90px; width: auto; object-fit: contain; }
         
-        /* Banner Styling using Uploaded banner.jpg */
-        .banner { 
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('banner.jpg') no-repeat center center/cover; 
-            height: 380px; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center; 
-            color: white; 
-            text-align: center; 
-            padding: 20px; 
-        }
+        /* Banner Container Adjustments */
+        .banner-container { width: 100%; max-width: 100%; overflow: hidden; display: block; line-height: 0; }
+        .banner-img { width: 100%; height: auto; display: block; }
         
         /* Layout Container */
         .container { max-width: 1200px; margin: 45px auto; padding: 0 20px; }
@@ -69,9 +60,9 @@
         <img src="logo.png" alt="Safa Marwa Shop Logo" class="logo-img" onerror="this.style.display='none'; this.after('🛍️ SAFAMARWASHOP.COM');">
     </header>
 
-    <!-- Welcome Hero Banner with Custom Background -->
-    <div class="banner">
-        <!-- background-image handles banner.jpg automatically -->
+    <!-- New Banner Section -->
+    <div class="banner-container">
+        <img src="banner.jpg" alt="Safa Marwa Shop Banner" class="banner-img" onerror="this.src='banner.png';">
     </div>
 
     <!-- Main Products Showcase -->
@@ -173,3 +164,8 @@
             <div class="product-card">
                 <div class="product-img" style="background-image: url('product7.jpg'); background-color: #eee;"></div>
                 <div class="product-info">
+                    <div>
+                        <span class="product-tag">Stylish Products</span>
+                        <h4 class="product-title">Trendy Kids Soft Sneakers</h4>
+                    </div>
+                    <div>
