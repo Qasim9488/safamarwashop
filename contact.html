@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Safa Marwa Shop</title>
+    <style>
+        /* Basic Setup */
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; text-align: center; }
+        header { background-color: #333; color: white; padding: 20px; position: sticky; top: 0; z-index: 100; }
+        header h1 { margin: 0; font-size: 24px; }
+        nav { margin-top: 10px; }
+        nav a { color: #ffeb3b; text-decoration: none; margin: 0 15px; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+
+        /* Contact Box Styling */
+        .contact-container { max-width: 800px; margin: 40px auto; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .contact-title { font-size: 28px; color: #333; margin-bottom: 30px; font-weight: bold; }
+        
+        .contact-method { display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 20px 0; padding: 15px; border-radius: 8px; transition: 0.3s; }
+        
+        /* Bada aur Saaf Text */
+        .contact-label { font-size: 16px; color: #666; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+        .contact-value { font-size: 32px; font-weight: bold; color: #222; text-decoration: none; word-break: break-all; }
+        
+        /* Interactive Links colors */
+        .email-style { color: #0066cc; }
+        .whatsapp-style { color: #25d366; }
+        .whatsapp-style:hover { color: #1ebd54; }
+
+        /* Full Width Map Container */
+        .map-section { width: 100%; max-width: 1000px; margin: 40px auto; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 1px solid #ddd; }
+        .map-section h3 { padding: 15px 0; margin: 0; background-color: #f4f4f4; color: #333; border-bottom: 1px solid #ddd; }
+        iframe { width: 100%; height: 450px; border: 0; display: block; }
+
+        footer { background-color: #222; color: white; padding: 15px; margin-top: 40px; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <h1>Safa Marwa Shop</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Our Products</a>
+            <a href="contact.html" style="color: white;">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Main Contact Info -->
+    <div class="contact-container">
+        <div class="contact-title">Hum Se Rabta Karein</div>
+
+        <!-- Email Section -->
+        <div class="contact-method">
+            <span class="contact-label">📧 Email Address</span>
+            <!-- ⚠️ info@safamarwashop.com ko mita kar apna asli email likhein -->
+            <a href="mailto:iqmc2025@gmail.com" class="contact-value email-style">iqmc2025@gmail.com</a>
+        </div>
+
+        <hr style="width: 80%; border: 0; border-top: 1px solid #eee;">
+
+        <!-- WhatsApp Section -->
+        <div class="contact-method">
+            <span class="contact-label">💬 WhatsApp Number</span>
+            <!-- Apne number ke sath click to chat link -->
+            <a href="https://wa.me" class="contact-value whatsapp-style" target="_blank">+971557243316</a>
+        </div>
+    </div>
+
+    <!-- Live Google Map of Faisalabad -->
+    <div class="map-section">
+        <h3>📍 Humara Location (Faisalabad, Pakistan)</h3>
+        <!-- Faisalabad City Google Maps Embed Code -->
+        <iframe 
+            src="https://google.com" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Safa Marwa Shop. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
