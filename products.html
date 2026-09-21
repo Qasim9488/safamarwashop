@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products - Safa Marwa Haajra Shop</title>
+    <style>
+        /* Buniyadi Layout Styling */
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; text-align: center; }
+        header { background-color: #333; color: white; padding: 20px; position: sticky; top: 0; z-index: 100; }
+        header h1 { margin: 0; font-size: 24px; }
+        nav { margin-top: 10px; }
+        nav a { color: #ffeb3b; text-decoration: none; margin: 0 15px; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+        
+        .page-title { margin: 40px 0 10px 0; color: #333; }
+        .page-subtitle { color: #666; margin-bottom: 30px; font-size: 16px; }
+
+        /* Products Grid Setup */
+        .products-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; padding: 20px; max-width: 1200px; margin: 0 auto; }
+        
+        /* Product Card Styling */
+        .product-card { background: white; border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; width: 280px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); transition: 0.3s; text-align: left; display: flex; flex-direction: column; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 6px 15px rgba(0,0,0,0.1); }
+        
+        /* Product Image */
+        .product-card img { width: 100%; height: 280px; object-fit: cover; background-color: #f4f4f4; }
+        
+        /* Product Info Inside Card */
+        .product-info { padding: 15px; display: flex; flex-direction: column; flex-grow: 1; }
+        .product-title { font-size: 18px; font-weight: bold; color: #222; margin: 0 0 8px 0; }
+        .product-desc { font-size: 14px; color: #666; line-height: 1.4; margin: 0 0 15px 0; flex-grow: 1; }
+        
+        /* Price and Button Row */
+        .product-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+        .product-price { font-size: 18px; color: #e91e63; font-weight: bold; }
+        .order-btn { background-color: #25d366; color: white; text-decoration: none; padding: 8px 15px; border-radius: 6px; font-size: 14px; font-weight: bold; transition: 0.2s; }
+        .order-btn:hover { background-color: #1ebd54; }
+
+        footer { background-color: #222; color: white; padding: 15px; margin-top: 5px; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <h1>Safa Marwa Shop</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html" style="color: white;">Our Products</a>
+            <a href="#">Contact Us</a>
+        </nav>
+    </header>
+
+    <h2 class="page-title">Humari Nayi Collection</h2>
+    <p class="page-subtitle">Bacchon ke behtareen aur naye kapde munasib daam mein</p>
+
+    <!-- Main Products Display Grid -->
+    <div class="products-grid">
+
+        <!-- PRODUCT 1 -->
+        <div class="product-card">
+            <!-- Apni product picture ka naam 'src' mein likhein -->
+            <img src="dress1.jpg" alt="Fancy Party Dress" onerror="this.src='banner5.png';">
+            <div class="product-info">
+                <div class="product-title">Fancy Party Dress</div>
+                <p class="product-desc">Bacchon ke liye nihayat khubsoorat aur comfortable party wear frock. High quality fabric aur pakki silai ke sath.</p>
+                <div class="product-footer">
+                    <span class="product-price">50 AED</span>
+                    <a href="https://wa.me" class="order-btn" target="_blank">Order Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCT 2 -->
+        <div class="product-card">
+            <img src="summer.png" alt="Casual Summer T-Shirt" onerror="this.src='banner5.png';">
+            <div class="product-info">
+                <div class="product-title">Casual Summer T-Shirt</div>
+                <p class="product-desc">Pure cotton se bani thandi aur narm t-shirt jo garmiyon ke liye behtareen hai. Dhone par rang kharab nahi hoga.</p>
+                <div class="product-footer">
+                    <span class="product-price">35 AED</span>
+                    <a href="https://wa.me" class="order-btn" target="_blank">Order Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCT 3 -->
+        <div class="product-card">
+            <img src="jeans.jpg" alt="Kids Denim Jeans" onerror="this.src='banner5.png';">
+            <div class="product-info">
+                <div class="product-title">Kids Denim Jeans</div>
+                <p class="product-desc">Stretchable aur mazboot denim jeans jo bacchon ke rozana pehn'nay aur khelne koodne ke liye aaram-deh hai.</p>
+                <div class="product-footer">
+                    <span class="product-price">45 AED</span>
+                    <a href="https://wa.me" class="order-btn" target="_blank">Order Now</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Safa Marwa Shop. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
