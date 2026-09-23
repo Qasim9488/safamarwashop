@@ -1,53 +1,48 @@
 <!DOCTYPE html>
-<html lang="ur">   
+<html lang="ur">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Products -Safa Marwa Haajra Shop</title>
+    <title>Contact Us - Safa Marwa Shop</title>
     <style>
-        /* Buniyadi Layout Styling */
+        /* Basic Setup */
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; text-align: center; }
         header { background-color: #0ba0e0; color: white; padding: 20px; position: sticky; top: 0; z-index: 100; }
         header h1 { margin: 0; font-size: 24px; }
         nav { margin-top: 10px; }
         nav a { color: #ffeb3b; text-decoration: none; margin: 0 15px; font-weight: bold; }
         nav a:hover { text-decoration: underline; }
+
+        /* Contact Box Styling */
+        .contact-container { max-width: 800px; margin: 40px auto; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .contact-title { font-size: 28px; color: #333; margin-bottom: 30px; font-weight: bold; }
         
-        .page-title { margin: 40px 0 10px 0; color: #52128a; }
-        .page-subtitle { color: #52128a; margin-bottom: 30px; font-size: 16px; }
-        
-        
-      /* Contact Info Bar */
+        .contact-method { display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 20px 0; padding: 15px; border-radius: 8px; transition: 0.3s; }
+
+        /* Contact Info Bar */
         .contact-bar { background-color: #0ba0e0; color: #f8f9fa; text-align: left; padding: 12px; font-size: 20px; }
         .contact-bar a { color: #fcfafa; text-decoration: none; font-weight: bold; margin: 0 12px; }
 
         /* Top Navigation Header for LOGO */
         header { background-color: white; padding: 15px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
         .logo-img { max-height: 90px; width: auto; object-fit: contain; }
-        
-        
-        /* Products Grid Setup */
-        .products-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; padding: 20px; max-width: 1200px; margin: 0 auto; }
-        
-        /* Product Card Styling */
-        .product-card { background: white; border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; width: 280px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); transition: 0.3s; text-align: left; display: flex; flex-direction: column; }
-        .product-card:hover { transform: translateY(-5px); box-shadow: 0 6px 15px rgba(0,0,0,0.1); }
-        
-        /* Product Image */
-        .product-card img { width: 100%; height: 280px; object-fit: cover; background-color: #f4f4f4; }
-        
-        /* Product Info Inside Card */
-        .product-info { padding: 15px; display: flex; flex-direction: column; flex-grow: 1; }
-        .product-title { font-size: 18px; font-weight: bold; color: #222; margin: 0 0 8px 0; }
-        .product-desc { font-size: 14px; color: #666; line-height: 1.4; margin: 0 0 15px 0; flex-grow: 1; }
-        
-        /* Price and Button Row */
-        .product-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
-        .product-price { font-size: 18px; color: #e91e63; font-weight: bold; }
-        .order-btn { background-color: #25d366; color: white; text-decoration: none; padding: 8px 15px; border-radius: 6px; font-size: 14px; font-weight: bold; transition: 0.2s; }
-        .order-btn:hover { background-color: #1ebd54; }
 
-        footer { background-color: #222; color: white; padding: 15px; margin-top: 5px; font-size: 14px; }
+        
+        /* Bada aur Saaf Text */
+        .contact-label { font-size: 16px; color: #666; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+        .contact-value { font-size: 32px; font-weight: bold; color: #222; text-decoration: none; word-break: break-all; }
+        
+        /* Interactive Links colors */
+        .email-style { color: #0066cc; }
+        .whatsapp-style { color: #25d366; }
+        .whatsapp-style:hover { color: #1ebd54; }
+
+        /* Full Width Map Container */
+        .map-section { width: 100%; max-width: 1000px; margin: 40px auto; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 1px solid #ddd; }
+        .map-section h3 { padding: 15px 0; margin: 0; background-color: #f4f4f4; color: #333; border-bottom: 1px solid #ddd; }
+        iframe { width: 100%; height: 450px; border: 0; display: block; }
+
+        footer { background-color: #222; color: white; padding: 15px; margin-top: 40px; font-size: 14px; }
     </style>
 </head>
 <body>
