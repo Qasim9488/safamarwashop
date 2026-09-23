@@ -12,6 +12,15 @@
         nav { margin-top: 10px; }
         nav a { color: #ffeb3b; text-decoration: none; margin: 0 15px; font-weight: bold; }
         nav a:hover { text-decoration: underline; }
+
+        /* Contact Info Bar */
+        .contact-bar { background-color: #0ba0e0; color: #f8f9fa; text-align: left; padding: 12px; font-size: 20px; }
+        .contact-bar a { color: #fcfafa; text-decoration: none; font-weight: bold; margin: 0 12px; }
+
+        /* Top Navigation Header for LOGO */
+        header { background-color: white; padding: 15px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .logo-img { max-height: 90px; width: auto; object-fit: contain; }
+
         
         /* Top Sale Banner Alert */
         .sale-alert-bar { background-color: #ff007f; color: white; padding: 10px 0; font-weight: bold; font-size: 18px; letter-spacing: 1px; animation: blink 1.5s infinite; }
@@ -53,15 +62,20 @@
 </head>
 <body>
 
-    <!-- Header Navigation -->
+    <!-- Contact Bar -->
+   
+    <div class="contact-bar">
+<nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a> 
+    <a href="about.html">About us</a>
+    <a href="contact.html">Contact</a>
+</nav>
+    </div>
+
+    <!-- Header Section with Logo Image -->
     <header>
-        <h1>Safa Marwa Shop</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="products.html">Our Products</a>
-            <a href="sale.html" style="color: white;">Sale & Offers</a>
-            <a href="contact.html">Contact Us</a>
-        </nav>
+        <img src="LOGO.jpg" alt="Safa Marwa Shop Logo" class="logo-img" onerror="this.src='logo.jpg'; this.onerror=function(){ this.style.display='none'; this.after('🛍️ 𝕊𝔸𝔽𝔸 𝕄𝔸ℝ𝕎𝔸 ℍ𝔸𝔸𝕁ℝ𝔸'); };">
     </header>
 
     <!-- Top Notice Bar -->
