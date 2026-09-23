@@ -19,9 +19,14 @@
         
         .contact-method { display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 20px 0; padding: 15px; border-radius: 8px; transition: 0.3s; }
 
+        /* Contact Info Bar */
+        .contact-bar { background-color: #0ba0e0; color: #f8f9fa; text-align: left; padding: 12px; font-size: 20px; }
+        .contact-bar a { color: #fcfafa; text-decoration: none; font-weight: bold; margin: 0 12px; }
+
         /* Top Navigation Header for LOGO */
         header { background-color: white; padding: 15px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
         .logo-img { max-height: 90px; width: auto; object-fit: contain; }
+
         
         /* Bada aur Saaf Text */
         .contact-label { font-size: 16px; color: #666; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
@@ -41,16 +46,22 @@
     </style>
 </head>
 <body>
+    <!-- Contact Bar -->
+   
+    <div class="contact-bar">
+<nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a> 
+    <a href="about.html">About us</a>
+    <a href="contact.html">Contact</a>
+</nav>
+    </div>
 
-    <!-- Header Navigation -->
-    <header>
-        
-    </header>
     <!-- Header Section with Logo Image -->
     <header>
-        <img src="LOGO.jpg" alt="Safa Marwa Shop Logo" class="logo-img" onerror="this.src='logo.jpg'; this.onerror=function(){ this.style.display='none'; this.after('🛍️ 𝕊𝔸𝔽𝔸 𝕄𝔸ℝ𝕎𝔸 ℍ𝔸𝔸𝕁ℝ𝔸'); };">        
-    
+        <img src="LOGO.jpg" alt="Safa Marwa Shop Logo" class="logo-img" onerror="this.src='logo.jpg'; this.onerror=function(){ this.style.display='none'; this.after('🛍️ 𝕊𝔸𝔽𝔸 𝕄𝔸ℝ𝕎𝔸 ℍ𝔸𝔸𝕁ℝ𝔸'); };">
     </header>
+
 
     <!-- Main Contact Info -->
     <div class="contact-container">
