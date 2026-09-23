@@ -3,117 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Safa Marwa Shop</title>
+    <title>About Us - Safa Marwa Shop</title>
     <style>
         /* Basic Setup */
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; text-align: center; }
-        header { background-color: #0ba0e0; color: white; padding: 20px; position: sticky; top: 0; z-index: 100; }
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f4; padding: 0; margin: 0; }
+        header { background-color: #333; color: white; padding: 20px; position: sticky; top: 0; z-index: 100; }
         header h1 { margin: 0; font-size: 24px; }
         nav { margin-top: 10px; }
         nav a { color: #ffeb3b; text-decoration: none; margin: 0 15px; font-weight: bold; }
         nav a:hover { text-decoration: underline; }
 
-        /* Contact Box Styling */
-        .contact-container { max-width: 800px; margin: 40px auto; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .contact-title { font-size: 28px; color: #333; margin-bottom: 30px; font-weight: bold; }
+        .about-container { max-width: 800px; margin: 40px auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        h1 { color: #333; margin-bottom: 20px; }
+        p { color: #666; font-size: 18px; line-height: 1.6; margin-bottom: 30px; }
         
-        .contact-method { display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 20px 0; padding: 15px; border-radius: 8px; transition: 0.3s; }
+        /* 🎥 Video Container Styling */
+        .video-wrapper { width: 100%; max-width: 650px; margin: 0 auto 30px auto; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.15); background-color: #000; }
+        .video-wrapper video { width: 100%; height: auto; display: block; }
 
-        /* Contact Info Bar */
-        .contact-bar { background-color: #0ba0e0; color: #f8f9fa; text-align: left; padding: 12px; font-size: 20px; }
-        .contact-bar a { color: #fcfafa; text-decoration: none; font-weight: bold; margin: 0 12px; }
-
-        /* Top Navigation Header for LOGO */
-        header { background-color: white; padding: 15px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .logo-img { max-height: 90px; width: auto; object-fit: contain; }
-
-        
-        /* Bada aur Saaf Text */
-        .contact-label { font-size: 16px; color: #666; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
-        .contact-value { font-size: 32px; font-weight: bold; color: #222; text-decoration: none; word-break: break-all; }
-        
-              
-        /* Interactive Links colors */
-        .email-style { color: #0066cc; }
-        .whatsapp-style { color: #25d366; }
-        .whatsapp-style:hover { color: #1ebd54; }
-
-        /* Full Width Map Container */
-        .map-section { width: 100%; max-width: 1000px; margin: 40px auto; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border: 1px solid #ddd; }
-        .map-section h3 { padding: 15px 0; margin: 0; background-color: #f4f4f4; color: #333; border-bottom: 1px solid #ddd; }
-        iframe { width: 100%; height: 450px; border: 0; display: block; }
-
-        footer { background-color: #222; color: white; padding: 15px; margin-top: 40px; font-size: 14px; }
+        .back-btn { display: inline-block; padding: 12px 25px; background-color: #e91e63; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.2s; }
+        .back-btn:hover { background-color: #c2185b; }
+        footer { background-color: #222; color: white; padding: 15px; margin-top: 50px; font-size: 14px; }
     </style>
 </head>
 <body>
-    <!-- Contact Bar -->
-   
-    <div class="contact-bar">
-<nav>
-    <a href="index.html">Home</a>
-    <a href="products.html">Products</a> 
-    <a href="discount.html">Discount/Offers</a> 
-    <a href="about.html">About us</a>
-    <a href="contact.html">Contact</a>
-</nav>
-    </div>
 
-    <!-- Header Section with Logo Image -->
+    <!-- Header Navigation -->
     <header>
-        <img src="LOGO.jpg" alt="Safa Marwa Shop Logo" class="logo-img" onerror="this.src='logo.jpg'; this.onerror=function(){ this.style.display='none'; this.after('🛍️ 𝕊𝔸𝔽𝔸 𝕄𝔸ℝ𝕎𝔸 ℍ𝔸𝔸𝕁ℝ𝔸'); };">
+        <h1>Safa Marwa Shop</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Our Products</a>
+            <a href="about.html" style="color: white;">About Us</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
     </header>
 
-
+    <div class="about-container">
+        <h1>Humare Baray Mein (About Us)</h1>
+        <p>Safa Marwa Shop par khush-aamdeed! Hum aapke bacchon ke liye behtareen, naye aur stylish kapde (Children Garments) faraham karte hain. Humara maqsad aap tak behtareen quality munasib daam mein puhanchana hai.</p>
         
-                    
-       <div class="card">  
-        <h1>✴★🎀𝕎𝕖𝕝𝕔𝕠𝕞𝕖🎀★✴</h1>
-        <p> 🎀✩░▒▓▆▅▃▂▁𝐒𝐀𝐅𝐀 𝐌𝐀𝐑𝐖𝐀 𝐇𝐀𝐀𝐉𝐑𝐀 𝐒𝐇𝐎𝐏▁▂▃▅▆▓▒░✩🎀</p>
-                                            
-        
-         Where little ones’ style meets comfort and quality! 💕✨
+        <!-- 🎥 VIDEO SECTION START -->
+        <div class="video-wrapper">
+            <!-- controls lagaya hai taake customer video rok sake ya aawaz tez kar sake -->
+            <!-- poster mein banner5.png lagaya hai jo video load hone tak dikhega -->
+            <video controls poster="banner5.png" playsinline>
+                <source src="about-video.mp4" type="video/mp4">
+                Aapka browser video support nahi karta.
+            </video>
+        </div>
+        <!-- 🎥 VIDEO SECTION END -->
 
-At 𝐒𝐀𝐅𝐀 𝐌𝐀𝐑𝐖𝐀 𝐇𝐀𝐀𝐉𝐑𝐀 𝐒𝐇𝐎𝐏, we believe that children deserve to look stylish, feel comfortable, and enjoy every moment of their childhood. That’s why we bring you a carefully selected collection of **children’s garments, trendy shoes, and stylish accessories** designed to add a special touch to every little one’s personality.
-
-Our goal is to make shopping for kids **easy, enjoyable, and affordable**. From adorable everyday outfits to stylish shoes and charming accessories, we offer products that are perfect for birthdays, family gatherings, special occasions, and everyday adventures.
-</p>
-            
-            
-</p>Why Choose 𝐒𝐀𝐅𝐀 𝐌𝐀𝐑𝐖𝐀 𝐇𝐀𝐀𝐉𝐑𝐀 𝐒𝐇𝐎𝐏?</p>
-            
-
-</p>👗 **Trendy Children’s Clothing** – Comfortable and stylish outfits for little ones.</p>
-</p>👟 **Stylish Shoes** – Cute, comfortable footwear for every occasion.</p>
-</p>🎀 **Beautiful Accessories** – Fun and fashionable accessories to complete every look.</p>
-</p>💖 **Quality & Comfort** – We focus on products that children can comfortably enjoy.</p>
-</p>🛍️ **Easy Online Shopping** – Shop your favorite kids’ products conveniently from home.
-</p>      
-
-            
-At **𝐒𝐀𝐅𝐀 𝐌𝐀𝐑𝐖𝐀 𝐇𝐀𝐀𝐉𝐑𝐀 𝐒𝐇𝐎𝐏**, every little detail matters because we know that happy children mean happy parents. We are committed to providing a shopping experience you can trust and products you’ll love.
-
-            
-**𝐒𝐀𝐅𝐀 𝐌𝐀𝐑𝐖𝐀 𝐇𝐀𝐀𝐉𝐑𝐀 𝐒𝐇𝐎𝐏 — Making Little Moments More Stylish! 💕**
-            
-</p>
-  </div>
-
-   <video width="100%" height="auto" controls poster="vid1.mp4">
-    <source src="vid1.mp4" type="video/mp4">
-    Aapka browser video support nahi karta.
-</video>
+        <!-- Home page par wapas jaane ka button -->
+        <a href="index.html" class="back-btn">Wapas Home Par Jayein</a>
+    </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Safa Marwa Haajra Shop. All Rights Reserved.</p>
+        <p>&copy; 2026 Safa Marwa Shop. All Rights Reserved.</p>
     </footer>
-     
-  
-      
+
 </body>
 </html>
-
-  
-
-
