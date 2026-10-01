@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <title>Premium Party Dress - Details</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; background-color: #fef1f5; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        .main-image { width: 100%; max-width: 500px; border-radius: 10px; }
+        .video-section { margin-top: 40px; }
+        .video-container { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- ہوم پیج پر واپس جانے کا بٹن -->
+        <a href="discount.html" style="float: left; text-decoration: none; color: #ff007f;">← واپس جائیں</a>
+        <br><br>
+
+        <!-- بڑی تصویر -->
+        <img src="party-dress.jpg" alt="Premium Party Dress" class="main-image">
+        
+        <h2>Premium Party Dress</h2>
+        <p>بچوں کے لیے نہایت خوبصورت اور آرام دہ پارٹی ڈریس۔ کپڑا اور مٹیریل بالکل بہترین ہے۔</p>
+        <h3 style="color: #ff007f;">قیمت: 1079 Rs</h3>
+
+        <!-- ویڈیوز لگانے کا سیکشن -->
+        <div class="video-section">
+            <h3>پروڈکٹ کی ویڈیوز دیکھیں</h3>
+            
+            <!-- اگر ویڈیو کمپیوٹر/فولڈر میں ہے تو یہ کوڈ استعمال کریں -->
+            <div class="video-container">
+                <video width="100%" max-width="600" controls>
+                    <source src="dress-video1.mp4" type="video/mp4">
+                    آپ کا براؤزر ویڈیو سپورٹ نہیں کرتا۔
+                </video>
+            </div>
+
+            <!-- اگر یوٹیوب (YouTube) کی ویڈیو لگانی ہے تو یہ کوڈ استعمال کریں -->
+            <div class="video-container">
+                <iframe width="100%" height="315" src="https://youtube.com" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
