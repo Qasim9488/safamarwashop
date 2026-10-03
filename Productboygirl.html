@@ -17,6 +17,11 @@
             color: #333;
         }
 
+        /* Top Navigation Header for LOGO */
+        header { background-color: white; padding: 15px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .logo-img { max-height: 90px; width: auto; object-fit: contain; }
+
+
         /* Top Notification Banner (English & Urdu Mixed) */
         .promo-banner {
             background: linear-gradient(135deg, #f26299, #f9a3c5);
@@ -163,6 +168,12 @@
     </style>
 </head>
 <body>
+
+    <!-- Header Section with Logo Image -->
+    <header>
+        <img src="LOGO.jpg" alt="Safa Marwa Shop Logo" class="logo-img" onerror="this.src='logo.jpg'; this.onerror=function(){ this.style.display='none'; this.after('🛍️ 𝕊𝔸𝔽𝔸 𝕄𝔸ℝ𝕎𝔸 ℍ𝔸𝔸𝕁ℝ𝔸'); };">
+    </header>
+
 
     <!-- Free Delivery Banner at Top -->
     <div class="promo-banner">
