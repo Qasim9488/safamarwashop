@@ -2,12 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Safa Marwa Haajra - Kids Snake Game</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
             margin: 0;
-            padding: 0;
+            padding: 10px;
             background: linear-gradient(135deg, #fff5f7 0%, #e6f4fe 100%);
             font-family: 'Arial', sans-serif;
             display: flex;
@@ -16,31 +19,31 @@
             justify-content: center;
             min-height: 100vh;
             user-select: none;
-            touch-action: manipulation;
+            touch-action: none;
         }
 
         .heading {
             color: #4a90e2;
-            font-size: 28px;
-            margin-bottom: 5px;
+            font-size: 24px;
+            margin-bottom: 2px;
             font-weight: bold;
             text-align: center;
         }
 
         .subheading {
             color: #ff6b81;
-            font-size: 16px;
-            margin-bottom: 15px;
+            font-size: 14px;
+            margin-bottom: 10px;
             font-weight: bold;
         }
 
         .score-board {
-            font-size: 22px;
+            font-size: 18px;
             font-weight: bold;
             color: #4a90e2;
             margin-bottom: 10px;
             background: white;
-            padding: 5px 20px;
+            padding: 5px 15px;
             border-radius: 50px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             display: flex;
@@ -51,20 +54,15 @@
             color: #ff6b81;
         }
 
-        .item-label {
-            color: #ffcc00;
-            text-shadow: 1px 1px 1px #00000022;
-        }
-
         .game-container {
             position: relative;
             background-color: #ffffff;
-            border: 8px solid #ffcc00;
-            border-radius: 25px;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+            border: 6px solid #ffcc00;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             overflow: hidden;
-            width: 360px;
-            height: 360px;
+            width: 320px;
+            height: 320px;
         }
 
         .game-background-logo {
@@ -74,10 +72,10 @@
             width: 100%;
             height: 100%;
             background-image: url('logo.png'); 
-            background-size: 85% auto;
+            background-size: 75% auto;
             background-position: center;
             background-repeat: no-repeat;
-            opacity: 0.18;
+            opacity: 0.15;
             pointer-events: none;
             z-index: 0;
         }
@@ -90,22 +88,20 @@
             z-index: 1;
         }
 
-        /* Overlay Screens (Start & Popup) */
         .overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.9);
             z-index: 10;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 20px;
-            box-sizing: border-box;
+            padding: 15px;
         }
 
         .start-btn, .close-btn {
@@ -113,77 +109,55 @@
             color: white;
             border: none;
             border-radius: 50px;
-            padding: 12px 30px;
-            font-size: 20px;
+            padding: 10px 25px;
+            font-size: 18px;
             font-weight: bold;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(255, 107, 129, 0.4);
-            transition: transform 0.2s;
-        }
-
-        .start-btn:hover, .close-btn:hover {
-            transform: scale(1.05);
-        }
-
-        /* Coupon Styling */
-        .coupon-title {
-            color: #4a90e2;
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(255, 107, 129, 0.4);
         }
 
         .coupon-badge {
             background: #ffcc00;
             color: #333;
-            font-size: 22px;
+            font-size: 20px;
             font-weight: bold;
-            padding: 10px 20px;
-            border: 3px dashed #ff6b81;
+            padding: 8px 15px;
+            border: 2px dashed #ff6b81;
             border-radius: 10px;
-            margin: 15px 0;
-            letter-spacing: 2px;
+            margin: 10px 0;
         }
 
-        /* Mobile Controls Layout */
         .mobile-controls {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 15px;
-            gap: 5px;
-            width: 100%;
-            max-width: 200px;
+            margin-top: 10px;
+            gap: 3px;
         }
 
         .control-row {
             display: flex;
             justify-content: center;
-            gap: 25px;
-            width: 100%;
+            gap: 20px;
         }
 
         .btn {
-            width: 55px;
-            height: 55px;
+            width: 50px;
+            height: 50px;
             background-color: #4a90e2;
             color: white;
             border: none;
             border-radius: 50px;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 5px 10px rgba(74, 144, 226, 0.3);
+            box-shadow: 0 4px 8px rgba(74, 144, 226, 0.3);
             cursor: pointer;
         }
 
-        .btn:active {
-            background-color: #ff6b81;
-        }
-
-        .btn-up { background-color: #ffcc00; color: #333; box-shadow: 0 5px 10px rgba(255, 204, 0, 0.4); }
+        .btn-up { background-color: #ffcc00; color: #333; }
     </style>
 </head>
 <body>
@@ -193,31 +167,27 @@
 
     <div class="score-board">
         <div>Score: <span id="score">0</span></div>
-        <div>Catching: <span id="itemLabel" class="item-label">Shirt 👕</span></div>
+        <div>Catching: <span id="itemLabel">Shirt 👕</span></div>
     </div>
 
     <div class="game-container">
         <div class="game-background-logo"></div>
-        <canvas id="gameCanvas" width="360" height="360"></canvas>
+        <canvas id="gameCanvas" width="320" height="320"></canvas>
 
-        <!-- Start Screen Overlay -->
         <div class="overlay" id="startScreen">
-            <h2 style="color: #4a90e2; margin-bottom: 20px;">Welcome Kids! 🎈</h2>
+            <h3 style="color: #4a90e2; margin-bottom: 15px;">Welcome Kids! 🎈</h3>
             <button class="start-btn" id="startBtn">START GAME</button>
         </div>
 
-        <!-- 10% OFF Coupon Popup Overlay -->
         <div class="overlay" id="couponPopup" style="display: none;">
-            <div class="coupon-title">🎉 Amazing! 🎉</div>
-            <p style="color: #5cb85c; font-weight: bold; margin: 0;">You scored 2000+ points!</p>
-            <p style="color: #7f8c8d; font-size: 14px; margin: 5px 0;">Here is a special gift for your Parents:</p>
+            <h3 style="color: #4a90e2; margin: 0;">🎉 Win! 🎉</h3>
+            <p style="color: #5cb85c; font-weight: bold; margin: 5px 0;">2000 Points Cleared!</p>
             <div class="coupon-badge">KIDS10</div>
-            <p style="color: #ff6b81; font-weight: bold; font-size: 15px; margin-bottom: 15px;">Get 10% OFF on Baby Garments!</p>
-            <button class="close-btn" id="closePopupBtn">Resume Game</button>
+            <p style="color: #ff6b81; font-weight: bold; font-size: 14px; margin: 5px 0;">Get 10% OFF on Garments!</p>
+            <button class="close-btn" id="closePopupBtn">Play Again</button>
         </div>
     </div>
 
-    <!-- Touch Control Buttons for Mobile Users -->
     <div class="mobile-controls">
         <button class="btn btn-up" id="btnUp">↑</button>
         <div class="control-row">
@@ -235,7 +205,7 @@
         const startScreen = document.getElementById("startScreen");
         const couponPopup = document.getElementById("couponPopup");
 
-        const gridSize = 20;
+        const gridSize = 16;
         const tileCount = canvas.width / gridSize;
 
         let snake = [{x: 10, y: 10}, {x: 9, y: 10}, {x: 8, y: 10}];
@@ -264,17 +234,17 @@
             startScreen.style.display = "none";
             isGameRunning = true;
             if(gameInterval) clearInterval(gameInterval);
-            gameInterval = setInterval(updateGame, 150); 
+            gameInterval = setInterval(updateGame, 160); 
         }
 
         function updateGame() {
             if (!isGameRunning) return;
 
-            const head = {x: snake.x + dx, y: snake.y + dy};
+            const head = {x: snake[0].x + dx, y: snake[0].y + dy};
 
             if (head.x < 0 || head.x >= tileCount || head.y < 0 || head.y >= tileCount || checkCollision(head)) {
                 clearInterval(gameInterval);
-                alert("Game Over! Aapka Score: " + score);
+                alert("Game Over! Score: " + score);
                 resetGame();
                 return;
             }
@@ -285,23 +255,17 @@
                 score += 10;
                 scoreElement.innerText = score;
 
-                // Check for 2000 points coupon milestone
                 if (score >= 2000 && !couponAwarded) {
-                    showCoupon();
+                    isGameRunning = false;
+                    couponAwarded = true;
+                    couponPopup.style.display = "flex";
                 }
-
                 resetFood();
             } else {
                 snake.pop();
             }
 
             draw();
-        }
-
-        function showCoupon() {
-            isGameRunning = false; // Game pause karein
-            couponAwarded = true;  // Ek game me aik hi dafa popup aaye
-            couponPopup.style.display = "flex";
         }
 
         function checkCollision(head) {
@@ -325,3 +289,30 @@
             dy = 0;
             score = 0;
             couponAwarded = false;
+            scoreElement.innerText = score;
+            startScreen.style.display = "flex";
+            initGame();
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            snake.forEach((segment, index) => {
+                ctx.fillStyle = index === 0 ? "#4a90e2" : "#ff6b81"; 
+                ctx.beginPath();
+                ctx.arc(segment.x * gridSize + gridSize/2, segment.y * gridSize + gridSize/2, gridSize/2 - 1, 0, 2 * Math.PI);
+                ctx.fill();
+            });
+
+            let currentProduct = childProducts[food.productIndex];
+            ctx.font = "14px Arial";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText(currentProduct.emoji, food.x * gridSize + gridSize/2, food.y * gridSize + gridSize/2);
+        }
+
+        function changeDirection(direction) {
+            if (!isGameRunning) return;
+            switch(direction) {
+                case 'UP': if (dy === 0) { dx = 0; dy = -1; } break;
+                case 'DOWN': if (dy === 0) { dx = 0; dy = 1; } break;
