@@ -95,6 +95,78 @@
             border-radius: 20px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
+
+         .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .close-btn {
+            background-color: #ff6b81;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 107, 129, 0.4);
+        }
+
+        .coupon-badge {
+            background: #ffcc00;
+            color: #333;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 8px 15px;
+            border: 2px dashed #ff6b81;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        .mobile-controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 15px;
+            gap: 5px;
+        }
+
+        .control-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            width: 50px;
+            height: 50px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 22px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(74, 144, 226, 0.3);
+            cursor: pointer;
+        }
+
+        .btn-up { background-color: #ffcc00; color: #333; }
+        
     </style>
 </head>
 <body>
@@ -226,6 +298,19 @@
                 case "ArrowRight": if (dx === 0) { dx = 1; dy = 0; } e.preventDefault(); break;
             }
         });
+
+         function changeDirection(direction) {
+            if (!isGameRunning) return;
+            switch(direction) {
+                case 'UP': if (dy === 0) { dx = 0; dy = -1; } break;
+                case 'DOWN': if (dy === 0) { dx = 0; dy = 1; } break;
+                case 'LEFT': if (dx === 0) { dx = -1; dy = 0; } break;
+                case 'RIGHT': if (dx === 0) { dx = 1; dy = 0; } break;
+            }
+        }
+
+        window.addEventListener("keydown", e => {
+            if(["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) e.preventDefault();
 
         startGame();
     </script>
