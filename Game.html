@@ -87,7 +87,6 @@
             z-index: 1;
         }
 
-        /* Fixed Overlay Style */
         .overlay {
             position: absolute;
             top: 0;
@@ -95,7 +94,7 @@
             width: 100%;
             height: 100%;
             background: rgba(255, 255, 255, 0.95);
-            z-index: 9999; /* Isko sabse upar rakha hai */
+            z-index: 9999;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -109,13 +108,11 @@
             color: white;
             border: none;
             border-radius: 50px;
-            padding: 14px 35px;
-            font-size: 20px;
+            padding: 12px 30px;
+            font-size: 18px;
             font-weight: bold;
             cursor: pointer;
             box-shadow: 0 5px 15px rgba(255, 107, 129, 0.4);
-            outline: none;
-            -webkit-appearance: none;
         }
 
         .coupon-badge {
@@ -176,20 +173,19 @@
         <div class="game-background-logo"></div>
         <canvas id="gameCanvas" width="320" height="320"></canvas>
 
-        <!-- Start Screen Overlay -->
+        <!-- Start Screen -->
         <div class="overlay" id="startScreen">
             <h3 style="color: #4a90e2; margin-bottom: 20px;">Welcome Kids! 🎈</h3>
-            <!-- Kalid Touch & Click Events Fixed -->
-            <button class="start-btn" id="startBtn" onclick="startGame()" ontouchstart="startGame()">START GAME</button>
+            <button class="start-btn" id="startBtn">START GAME</button>
         </div>
 
-        <!-- Coupon Overlay -->
+        <!-- Coupon Screen -->
         <div class="overlay" id="couponPopup" style="display: none;">
             <h3 style="color: #4a90e2; margin: 0;">🎉 Win! 🎉</h3>
             <p style="color: #5cb85c; font-weight: bold; margin: 5px 0;">2000 Points Cleared!</p>
             <div class="coupon-badge">KIDS10</div>
             <p style="color: #ff6b81; font-weight: bold; font-size: 14px; margin: 5px 0;">Get 10% OFF on Garments!</p>
-            <button class="close-btn" id="closePopupBtn" onclick="resumeGame()" ontouchstart="resumeGame()">Play Again</button>
+            <button class="close-btn" id="closePopupBtn">Play Again</button>
         </div>
     </div>
 
@@ -245,6 +241,7 @@
         function updateGame() {
             if (!isGameRunning) return;
 
+            // FIXED LINE: Reference snake accurately from snake array
             const head = {x: snake[0].x + dx, y: snake[0].y + dy};
 
             if (head.x < 0 || head.x >= tileCount || head.y < 0 || head.y >= tileCount || checkCollision(head)) {
@@ -299,11 +296,6 @@
             initGame();
         }
 
-        function resumeGame() {
-            couponPopup.style.display = "none";
-            isGameRunning = true;
-        }
-
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -317,3 +309,12 @@
 
             // Draw Product Item
             let currentProduct = childProducts[food.productIndex];
+            ctx.font = "14px Arial";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText(currentProduct.emoji, food.x * gridSize + gridSize/2, food.y * gridSize + gridSize/2);
+        }
+
+        function changeDirection(direction) {
+            if (!isGameRunning) return;
+            switch(direction) {
