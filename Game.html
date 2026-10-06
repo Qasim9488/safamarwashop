@@ -103,7 +103,7 @@
             padding: 15px;
         }
 
-        .start-btn, .close-btn {
+        .close-btn {
             background-color: #ff6b81;
             color: white;
             border: none;
@@ -173,19 +173,13 @@
         <div class="game-background-logo"></div>
         <canvas id="gameCanvas" width="320" height="320"></canvas>
 
-        <!-- Start Screen -->
-        <div class="overlay" id="startScreen">
-            <h3 style="color: #4a90e2; margin-bottom: 20px;">Welcome Kids! 🎈</h3>
-            <button class="start-btn" id="startBtn">START GAME</button>
-        </div>
-
-        <!-- Coupon Screen -->
+        <!-- Coupon Screen Only -->
         <div class="overlay" id="couponPopup" style="display: none;">
             <h3 style="color: #4a90e2; margin: 0;">🎉 Win! 🎉</h3>
             <p style="color: #5cb85c; font-weight: bold; margin: 5px 0;">2000 Points Cleared!</p>
             <div class="coupon-badge">KIDS10</div>
             <p style="color: #ff6b81; font-weight: bold; font-size: 14px; margin: 5px 0;">Get 10% OFF on Garments!</p>
-            <button class="close-btn" id="closePopupBtn">Play Again</button>
+            <button class="close-btn" id="closePopupBtn">Resume Game</button>
         </div>
     </div>
 
@@ -203,7 +197,6 @@
         const ctx = canvas.getContext("2d");
         const scoreElement = document.getElementById("score");
         const itemLabelElement = document.getElementById("itemLabel");
-        const startScreen = document.getElementById("startScreen");
         const couponPopup = document.getElementById("couponPopup");
 
         const gridSize = 16;
@@ -215,7 +208,7 @@
         let dy = 0;
         let score = 0;
         let gameInterval;
-        let isGameRunning = false;
+        let isGameRunning = true;
         let couponAwarded = false;
 
         const childProducts = [
@@ -226,14 +219,8 @@
             { name: "Shoes 👟", emoji: "👟" }
         ];
 
-        function initGame() {
-            resetFood();
-            draw();
-        }
-
         function startGame() {
-            startScreen.style.display = "none";
-            isGameRunning = true;
+            resetFood();
             if(gameInterval) clearInterval(gameInterval);
             gameInterval = setInterval(updateGame, 160); 
         }
@@ -241,7 +228,7 @@
         function updateGame() {
             if (!isGameRunning) return;
 
-            // FIXED JAVASCRIPT BUG: Correctly accessing array elements using snake[0]
+            // Correct snake position calculation
             const head = {x: snake[0].x + dx, y: snake[0].y + dy};
 
             if (head.x < 0 || head.x >= tileCount || head.y < 0 || head.y >= tileCount || checkCollision(head)) {
@@ -292,8 +279,8 @@
             score = 0;
             couponAwarded = false;
             scoreElement.innerText = score;
-            startScreen.style.display = "flex";
-            initGame();
+            isGameRunning = true;
+            startGame();
         }
 
         function draw() {
@@ -318,3 +305,13 @@
         function changeDirection(direction) {
             if (!isGameRunning) return;
             switch(direction) {
+                case 'UP': if (dy === 0) { dx = 0; dy = -1; } break;
+                case 'DOWN': if (dy === 0) { dx = 0; dy = 1; } break;
+                case 'LEFT': if (dx === 0) { dx = -1; dy = 0; } break;
+                case 'RIGHT': if (dx === 0) { dx = 1; dy = 0; } break;
+            }
+        }
+
+        window.addEventListener("keydown", e => {
+            if(["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) e.preventDefault();
+            switch (e.key) {
