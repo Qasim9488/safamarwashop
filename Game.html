@@ -315,39 +315,5 @@
                 }
             });
 
-            // Draw Cute Child Products Using Emoji Rendering
-let currentProduct = childProducts[food.productIndex];
-ctx.font = "18px Arial";
-ctx.textAlign = "center";
-ctx.textBaseline = "middle";
-ctx.fillText(currentProduct.emoji, food.x * gridSize + gridSize/2, food.y * gridSize + gridSize/2);
-}
-function changeDirection(direction) {
-if (!isGameRunning) return;
-switch(direction) {
-case 'UP': if (dy === 0) { dx = 0; dy = -1; } break;
-case 'DOWN': if (dy === 0) { dx = 0; dy = 1; } break;
-case 'LEFT': if (dx === 0) { dx = -1; dy = 0; } break;
-case 'RIGHT': if (dx === 0) { dx = 1; dy = 0; } break;
-}
-}
-window.addEventListener("keydown", e => {
-if(["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) e.preventDefault();
-switch (e.key) {
-case "ArrowUp": changeDirection('UP'); break;
-case "ArrowDown": changeDirection('DOWN'); break;
-case "ArrowLeft": changeDirection('LEFT'); break;
-case "ArrowRight": changeDirection('RIGHT'); break;
-}
-});
-document.getElementById("closePopupBtn").addEventListener("click", () => {
-couponPopup.style.display = "none";
-isGameRunning = true;
-});
-document.getElementById("btnUp").addEventListener("click", () => changeDirection('UP'));
-document.getElementById("btnDown").addEventListener("click", () => changeDirection('DOWN'));
-document.getElementById("btnLeft").addEventListener("click", () => changeDirection('LEFT'));
-document.getElementById("btnRight").addEventListener("click", () => changeDirection('RIGHT'));
-startGame();
-
+            
 
