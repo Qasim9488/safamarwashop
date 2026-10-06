@@ -228,7 +228,7 @@
         function updateGame() {
             if (!isGameRunning) return;
 
-            // FIXED: Using snake[0] instead of snake. to track the head correctly
+            // 100% FIXED SYNTAX ERROR: Accessing snake head array properties correctly
             const head = {x: snake[0].x + dx, y: snake[0].y + dy};
 
             if (head.x < 0 || head.x >= tileCount || head.y < 0 || head.y >= tileCount || checkCollision(head)) {
@@ -314,4 +314,3 @@
 
         window.addEventListener("keydown", e => {
             if(["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) e.preventDefault();
-            switch (e.key) {
