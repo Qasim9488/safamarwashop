@@ -2,122 +2,316 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Safa Marwa Shop | Children Garments & Trendy Products</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Safa Marwa Haajra - Kids Snake Game</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f8f9fa; color: #333; }
-        
-        /* Contact Info Bar */
-        .contact-bar { background-color: #0ba0e0; color: #f8f9fa; text-align: left; padding: 12px; font-size: 20px; }
-        .contact-bar a { color: #fcfafa; text-decoration: none; font-weight: bold; margin: 0 12px; }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 10px;
+            background: linear-gradient(135deg, #fff5f7 0%, #e6f4fe 100%);
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            user-select: none;
+        }
 
-        /* Top Navigation Header for LOGO */
-        header { background-color: white; padding: 15px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .logo-img { max-height: 90px; width: auto; object-fit: contain; }
-        
-        /* Banner Container Adjustments */
-        .banner-container { width: 100%; max-width: 100%; overflow: hidden; display: block; line-height: 0; }
-        .banner-img { width: 100%; height: 100%; display: block; }
-        
-        /* Layout Container */
-        .container { max-width: 1200px; margin: 45px auto; padding: 0 20px; }
-        .section-title { text-align: center; margin-bottom: 35px; font-size: 32px; color: #2c3e50; font-weight: 700; position: relative; }
-        .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: #ff6b81; margin: 10px auto 0; border-radius: 2px; }
-        
-        /* Products Grid */
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
-        
-        /* Product Card Design */
-        .product-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.06); text-align: center; padding-bottom: 20px; transition: all 0.3s ease; border: 1px solid #eee; display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
-        .product-card:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.12); }
-        .product-img { width: 100%; height: 260px; background-size: cover; background-position: center; }
-        
-        .product-info { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
-        .product-tag { display: inline-block; background: #ffe1e6; color: #ff6b81; font-size: 11px; font-weight: bold; padding: 4px 10px; border-radius: 15px; margin-bottom: 8px; width: max-content; margin-left: auto; margin-right: auto; }
-        .product-title { font-size: 17px; margin-bottom: 8px; color: #2c3e50; font-weight: 600; min-height: 48px; }
-        .product-price { color: #ff6b81; font-size: 20px; font-weight: 700; margin-bottom: 15px; }
-        
-        /* Order Button WhatsApp */
-        .buy-btn { display: inline-flex; align-items: center; justify-content: center; background-color: #25d366; color: white; text-decoration: none; padding: 10px 20px; border-radius: 25px; font-weight: bold; font-size: 14px; transition: background 0.3s; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3); width: 90%; margin: 0 auto; }
-        .buy-btn:hover { background-color: #20ba5a; }
-        .buy-btn i { margin-right: 8px; font-style: normal; font-size: 16px; }      
-        
-   .my-footer {
-    text-align: center;
-    background-color: #0ba0e0; /* Aap apni pasand ka color laga sakte hain */
-    color: white;
-    padding: 10px 0;
-}
+        .heading {
+            color: #4a90e2;
+            font-size: 24px;
+            margin-bottom: 2px;
+            font-weight: bold;
+            text-align: center;
+        }
 
+        .subheading {
+            color: #ff6b81;
+            font-size: 14px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .score-board {
+            font-size: 18px;
+            font-weight: bold;
+            color: #4a90e2;
+            margin-bottom: 10px;
+            background: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: flex;
+            gap: 15px;
+        }
+
+        .score-board span {
+            color: #ff6b81;
+        }
+
+        .game-container {
+            position: relative;
+            background-color: #ffffff;
+            border: 6px solid #ffcc00;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            overflow: hidden;
+            width: 320px;
+            height: 320px;
+        }
+
+        .game-background-logo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('logo.png'); 
+            background-size: 75% auto;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        canvas {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .close-btn {
+            background-color: #ff6b81;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 107, 129, 0.4);
+        }
+
+        .coupon-badge {
+            background: #ffcc00;
+            color: #333;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 8px 15px;
+            border: 2px dashed #ff6b81;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        .mobile-controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 15px;
+            gap: 5px;
+        }
+
+        .control-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            width: 50px;
+            height: 50px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 22px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(74, 144, 226, 0.3);
+            cursor: pointer;
+        }
+
+        .btn-up { background-color: #ffcc00; color: #333; }
     </style>
 </head>
 <body>
-    
-    <!-- Contact Bar -->
-   
-    <div class="contact-bar">
-<nav>
-    <a href="index.html">ℍ𝕆𝕄𝔼</a>
-    <a href="Productboygirl.html">ℙℝ𝕆𝔻𝕌ℂ𝕋𝕊</a> 
-    <a href="discount.html">𝕆𝔽𝔽𝔼ℝ𝕊</a> 
-    <a href="about.html">𝔸𝔹𝕆𝕌𝕋 𝕌𝕊</a>
-    <a href="contact.html">ℂ𝕆ℕ𝕋𝔸ℂ𝕋</a>
-    <a href="Game.html">ℙ𝕃𝔸𝕐 𝔾𝔸𝕄𝔼</a>
-</nav>
+
+    <div class="heading">Safa Marwa Haajra</div>
+    <div class="subheading">Child Clothing Online Store</div>
+
+    <div class="score-board">
+        <div>Score: <span id="score">0</span></div>
+        <div>Catching: <span id="itemLabel">Shirt 👕</span></div>
     </div>
 
-    <!-- Header Section with Logo Image -->
-    <header>
-        <img src="LOGO.jpg" alt="Safa Marwa Shop Logo" class="logo-img" onerror="this.src='logo.jpg'; this.onerror=function(){ this.style.display='none'; this.after('🛍️ 𝕊𝔸𝔽𝔸 𝕄𝔸ℝ𝕎𝔸 ℍ𝔸𝔸𝕁ℝ𝔸'); };">
-    </header>
+    <div class="game-container">
+        <div class="game-background-logo"></div>
+        <canvas id="gameCanvas" width="320" height="320"></canvas>
 
-    <!-- Auto-Detecting Banner Section -->
-    <div class="banner-container">
-        <img src="banner0.jpg" alt="Safa Marwa Shop Banner" class="banner-img" onerror="this.src='banner.png'; this.onerror=function(){ this.src='image_eNg6fZ.png'; };">
+        <!-- Coupon Screen -->
+        <div class="overlay" id="couponPopup" style="display: none;">
+            <h3 style="color: #4a90e2; margin: 0;">🎉 Win! 🎉</h3>
+            <p style="color: #5cb85c; font-weight: bold; margin: 5px 0;">2000 Points Cleared!</p>
+            <div class="coupon-badge">KIDS10</div>
+            <p style="color: #ff6b81; font-weight: bold; font-size: 14px; margin: 5px 0;">Get 10% OFF on Garments!</p>
+            <button class="close-btn" id="closePopupBtn">Resume Game</button>
+        </div>
     </div>
 
-
-
-     <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 30px 0; padding: 0 10px;">
-    
-    <!-- Pehli Video ka Dabba -->
-    <div style="flex: 1; max-width: 450px; min-width: 280px;">
-        <video autoplay muted loop playsinline controls style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-            <!-- src mein apni pehli video file ka sahi naam/path likhein -->
-            <source src="Home1.mp4" type="video/mp4">
-            Aapka browser video support nahi karta.
-        </video>
-    </div>
-    
-    <!-- Doosri Video ka Dabba -->
-    <div style="flex: 1; max-width: 450px; min-width: 280px;">
-        <video autoplay muted loop playsinline controls style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-            <!-- src mein apni doosri video file ka sahi naam/path likhein -->
-            <source src="home2.mp4" type="video/mp4">
-            Aapka browser video support nahi karta.
-        </video>
+    <div class="mobile-controls">
+        <button class="btn btn-up" id="btnUp">↑</button>
+        <div class="control-row">
+            <button class="btn" id="btnLeft">←</button>
+            <button class="btn" id="btnRight">→</button>
+        </div>
+        <button class="btn" id="btnDown">↓</button>
     </div>
 
-     <!-- Tesri Video ka Dabba -->
-    <div style="flex: 1; max-width: 450px; min-width: 280px;">
-        <video autoplay muted loop playsinline controls style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-            <!-- src mein apni doosri video file ka sahi naam/path likhein -->
-            <source src="home3.mp4" type="video/mp4">
-            Aapka browser video support nahi karta.
-        </video>
-    </div>
-</div>
+    <script>
+        const canvas = document.getElementById("gameCanvas");
+        const ctx = canvas.getContext("2d");
+        const scoreElement = document.getElementById("score");
+        const itemLabelElement = document.getElementById("itemLabel");
+        const couponPopup = document.getElementById("couponPopup");
 
+        const gridSize = 16;
+        const tileCount = canvas.width / gridSize;
 
-    
+        let snake = [{x: 10, y: 10}, {x: 9, y: 10}, {x: 8, y: 10}];
+        let food = {x: 5, y: 5, productIndex: 0}; 
+        let dx = 1;
+        let dy = 0;
+        let score = 0;
+        let gameInterval;
+        let isGameRunning = true;
+        let couponAwarded = false;
 
+        const childProducts = [
+            { name: "Shirt 👕", emoji: "👕" },
+            { name: "Frock 👗", emoji: "👗" },
+            { name: "Socks 🧦", emoji: "🧦" },
+            { name: "Cap 🧢", emoji: "🧢" },
+            { name: "Shoes 👟", emoji: "👟" }
+        ];
 
-    
-  <footer class="my-footer">
-    <p>© 2026 Safa Marwa Haajra Shop. All Rights Reserved.</p>
-</footer
-          
+        function startGame() {
+            resetFood();
+            if(gameInterval) clearInterval(gameInterval);
+            gameInterval = setInterval(updateGame, 160); 
+        }
+
+        function updateGame() {
+            if (!isGameRunning) return;
+
+            // FIXED JAVASCRIPT BUG: Correctly accessing array elements using [0]
+            const head = {x: snake[0].x + dx, y: snake[0].y + dy};
+
+            if (head.x < 0 || head.x >= tileCount || head.y < 0 || head.y >= tileCount || checkCollision(head)) {
+                clearInterval(gameInterval);
+                alert("Game Over! Score: " + score);
+                resetGame();
+                return;
+            }
+
+            snake.unshift(head);
+
+            if (head.x === food.x && head.y === food.y) {
+                score += 10;
+                scoreElement.innerText = score;
+
+                if (score >= 2000 && !couponAwarded) {
+                    isGameRunning = false;
+                    couponAwarded = true;
+                    couponPopup.style.display = "flex";
+                }
+                resetFood();
+            } else {
+                snake.pop();
+            }
+
+            draw();
+        }
+
+        function checkCollision(head) {
+            return snake.some((segment, index) => index !== 0 && segment.x === head.x && segment.y === head.y);
+        }
+
+        function resetFood() {
+            food.x = Math.floor(Math.random() * tileCount);
+            food.y = Math.floor(Math.random() * tileCount);
+            food.productIndex = Math.floor(Math.random() * childProducts.length);
             
+            if(snake.some(segment => segment.x === food.x && segment.y === food.y)) {
+                resetFood();
+            }
+            itemLabelElement.innerText = childProducts[food.productIndex].name;
+        }
 
+        function resetGame() {
+            snake = [{x: 10, y: 10}, {x: 9, y: 10}, {x: 8, y: 10}];
+            dx = 1;
+            dy = 0;
+            score = 0;
+            couponAwarded = false;
+            scoreElement.innerText = score;
+            isGameRunning = true;
+            startGame();
+        }
 
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw Snake
+            snake.forEach((segment, index) => {
+                ctx.fillStyle = index === 0 ? "#4a90e2" : "#ff6b81"; 
+                ctx.beginPath();
+                ctx.arc(segment.x * gridSize + gridSize/2, segment.y * gridSize + gridSize/2, gridSize/2 - 1, 0, 2 * Math.PI);
+                ctx.fill();
+            });
+
+            // Draw Product Item
+            let currentProduct = childProducts[food.productIndex];
+            ctx.font = "14px Arial";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText(currentProduct.emoji, food.x * gridSize + gridSize/2, food.y * gridSize + gridSize/2);
+        }
+
+        function changeDirection(direction) {
+            if (!isGameRunning) return;
+            switch(direction) {
+                case 'UP': if (dy === 0) { dx = 0; dy = -1; } break;
+                case 'DOWN': if (dy === 0) { dx = 0; dy = 1; } break;
+                case 'LEFT': if (dx === 0) { dx = -1; dy = 0; } break;
+                case 'RIGHT': if (dx === 0) { dx = 1; dy = 0; } break;
+            }
+        }
+
+        window.addEventListener("keydown", e => {
+            if(["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) e.preventDefault();
+            switch (e.key) {
