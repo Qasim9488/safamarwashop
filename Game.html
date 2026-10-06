@@ -88,6 +88,7 @@
             z-index: 1;
         }
 
+        /* FIXED: Overlay layer high z-index taake clicks sahi se chalenge */
         .overlay {
             position: absolute;
             top: 0;
@@ -109,11 +110,13 @@
             color: white;
             border: none;
             border-radius: 50px;
-            padding: 10px 25px;
+            padding: 12px 30px;
             font-size: 18px;
             font-weight: bold;
             cursor: pointer;
             box-shadow: 0 4px 10px rgba(255, 107, 129, 0.4);
+            position: relative;
+            z-index: 12;
         }
 
         .coupon-badge {
@@ -174,11 +177,13 @@
         <div class="game-background-logo"></div>
         <canvas id="gameCanvas" width="320" height="320"></canvas>
 
+        <!-- Start Screen Overlay -->
         <div class="overlay" id="startScreen">
             <h3 style="color: #4a90e2; margin-bottom: 15px;">Welcome Kids! 🎈</h3>
             <button class="start-btn" id="startBtn">START GAME</button>
         </div>
 
+        <!-- Coupon Overlay -->
         <div class="overlay" id="couponPopup" style="display: none;">
             <h3 style="color: #4a90e2; margin: 0;">🎉 Win! 🎉</h3>
             <p style="color: #5cb85c; font-weight: bold; margin: 5px 0;">2000 Points Cleared!</p>
@@ -219,7 +224,7 @@
 
         const childProducts = [
             { name: "Shirt 👕", emoji: "👕" },
-            { name: "Frock 👗", emoji: "👗" },
+            { name: "Frock 👑", emoji: "👗" },
             { name: "Socks 🧦", emoji: "🧦" },
             { name: "Cap 🧢", emoji: "🧢" },
             { name: "Shoes 👟", emoji: "👟" }
@@ -240,7 +245,7 @@
         function updateGame() {
             if (!isGameRunning) return;
 
-            const head = {x: snake[0].x + dx, y: snake[0].y + dy};
+            const head = {x: snake.x + dx, y: snake.y + dy};
 
             if (head.x < 0 || head.x >= tileCount || head.y < 0 || head.y >= tileCount || checkCollision(head)) {
                 clearInterval(gameInterval);
@@ -297,6 +302,7 @@
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+            // Draw Snake
             snake.forEach((segment, index) => {
                 ctx.fillStyle = index === 0 ? "#4a90e2" : "#ff6b81"; 
                 ctx.beginPath();
@@ -304,6 +310,7 @@
                 ctx.fill();
             });
 
+            // Draw Item
             let currentProduct = childProducts[food.productIndex];
             ctx.font = "14px Arial";
             ctx.textAlign = "center";
@@ -312,7 +319,3 @@
         }
 
         function changeDirection(direction) {
-            if (!isGameRunning) return;
-            switch(direction) {
-                case 'UP': if (dy === 0) { dx = 0; dy = -1; } break;
-                case 'DOWN': if (dy === 0) { dx = 0; dy = 1; } break;
