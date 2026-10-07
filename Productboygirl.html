@@ -218,38 +218,6 @@
 
         </div>
 
-        <div style="text-align: center; margin: 30px 0; font-family: sans-serif;">
-    <h3>🎮 Play Tic-Tac-Toe</h3>
-    <div id="board" style="display: grid; grid-template-columns: repeat(3, 80px); gap: 5px; justify-content: center; margin: 15px auto;">
-        <button onclick="makeMove(0)" style="width: 80px; height: 80px; font-size: 24px; font-weight: bold; cursor: pointer; background: #f0f0f0; border: 1px solid #ccc; border-radius: 5px;"></button>
-        <button onclick="makeMove(1)" style="width: 80px; height: 80px; font-size: 24px; font-weight: bold; cursor: pointer; background: #f0f0f0; border: 1px solid #ccc; border-radius: 5px;"></button>
-        <button onclick="makeMove(2)" style="width: 80px; height: 80px; font-size: 24px; font-weight: bold; cursor: pointer; background: #f0f0f0; border: 1px solid #ccc; border-radius: 5px;"></button>
-        <button onclick="makeMove(3)" style="width: 80px; height: 80px; font-size: 24px; font-weight: bold; cursor: pointer; background: #f0f0f0; border: 1px solid #ccc; border-radius: 5px;"></button>
-        <button onclick="makeMove(4)" style="width: 80px; height: 80px; font-size: 24px; font-weight: bold; cursor: pointer; background: #f0f0f0; border: 1px solid #ccc; border-radius: 5px;"></button>
-        <button onclick="makeMove(5)" style="width: 80px; height: 80px; font-size: 24px; font-weight: bold; cursor: pointer; background: #f0f0f0; border: 1px solid #ccc; border-radius: 5px;"></button>
-        <button onclick="makeMove(6)" style="width: 80px; height: 80px; font-size: 24px; font-weight: bold; cursor: pointer; background: #f0f0f0; border: 1px solid #ccc; border-radius: 5px;"></button>
-        <button onclick="makeMove(7)" style="width: 80px; height: 80px; font-size: 24px; font-weight: bold; cursor: pointer; background: #f0f0f0; border: 1px solid #ccc; border-radius: 5px;"></button>
-        <button onclick="makeMove(8)" style="width: 80px; height: 80px; font-size: 24px; font-weight: bold; cursor: pointer; background: #f0f0f0; border: 1px solid #ccc; border-radius: 5px;"></button>
-    </div>
-    <button onclick="resetGame()" style="padding: 8px 15px; background: #00a2e8; color: white; border: none; border-radius: 4px; cursor: pointer;">Reset Game</button>
-
-    <script>
-        let board = ["", "", "", "", "", "", "", "", ""];
-        let currentPlayer = "X";
-        function makeMove(i) {
-            if (board[i] === "") {
-                board[i] = currentPlayer;
-                event.target.innerText = currentPlayer;
-                currentPlayer = currentPlayer === "X" ? "O" : "X";
-            }
-        }
-        function resetGame() {
-            board = ["", "", "", "", "", "", "", "", ""];
-            currentPlayer = "X";
-            document.querySelectorAll('#board button').forEach(b => b.innerText = "");
-        }
-    </script>
-</div>
 
         <footer style="background:#0ba0e0;color:#fff;padding:05px 05px;margin-top:0px;text-align:center;">
     <div style="max-width:1100px;margin:auto;">
