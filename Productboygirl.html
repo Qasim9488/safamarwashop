@@ -1,240 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Safa Marwa Haajra - Collections</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fbfbfb;
-            color: #333;
-        }
-
-        /* Top Navigation Header for LOGO */
-        header { background-color: white; padding: 15px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .logo-img { max-height: 90px; width: auto; object-fit: contain; }
-
-
-        /* Contact Info Bar */
-        .contact-bar { background-color: #0ba0e0; color: #f8f9fa; text-align: left; padding: 12px; font-size: 20px; }
-        .contact-bar a { color: #fcfafa; text-decoration: none; font-weight: bold; margin: 0 12px; }
-
-
-        /* Top Notification Banner (English & Urdu Mixed) */
-        .promo-banner {
-            background: linear-gradient(135deg, #f26299, #f9a3c5);
-            color: white;
-            text-align: center;
-            padding: 12px 10px;
-            font-size: 15px;
-            font-weight: bold;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .promo-banner span {
-            display: inline-block;
-            margin: 0 10px;
-        }
-
-        /* Main Container */
-        .collection-container {
-            max-width: 1100px;
-            margin: 60px auto;
-            padding: 0 20px;
-            text-align: center;
-        }
-
-        .page-title {
-            color: #0e03a6; /* Deep Sky Blue matching your logo/navbar */
-            font-size: 32px;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        .page-subtitle {
-            color: #0e03a6;
-            font-size: 16px;
-            margin-bottom: 40px;
-        }
-
-        /* Cards Grid Layout */
-        .cards-grid {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        /* The Selection Card Style */
-        .collection-card {
-            background: white;
-            border-radius: 20px;
-            width: 340px;
-            padding: 30px 20px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-decoration: none;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Card Colors Styling */
-        .girls-card {
-            border: 4px solid #f26299; /* Cute Pink border */
-        }
-        .boys-card {
-            border: 4px solid #3ca0e7; /* Sky Blue border */
-        }
-
-        .collection-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Circle for Icon/Image placement */
-        .icon-circle {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 55px;
-            margin-bottom: 20px;
-            box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
-        }
-
-        .girls-card .icon-circle {
-            background-color: #ffeef4;
-        }
-        .boys-card .icon-circle {
-            background-color: #e6f4fe;
-        }
-
-        .card-name {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .girls-card .card-name {
-            color: #f26299;
-        }
-        .boys-card .card-name {
-            color: #3ca0e7;
-        }
-
-        /* Custom Styled Button Inside Card */
-        .shop-btn {
-            color: white;
-            padding: 10px 25px;
-            border-radius: 25px;
-            font-weight: bold;
-            font-size: 15px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: background-color 0.2s;
-            margin-top: 10px;
-        }
-
-        .girls-card .shop-btn {
-            background-color: #f26299;
-        }
-        .girls-card .shop-btn:hover {
-            background-color: #d6497f;
-        }
-
-        .boys-card .shop-btn {
-            background-color: #3ca0e7;
-        }
-        .boys-card .shop-btn:hover {
-            background-color: #2684cb;
-        }
-
-        /* Responsive Setup for Small Screens */
-        @media (max-width: 768px) {
-            .cards-grid {
-                gap: 25px;
-            }
-            .collection-card {
-                width: 100%;
-                max-width: 320px;
-            }
-      
-     
-         }
-    </style>
-</head>
-<body>
-
-  <div class="contact-bar">
-<nav>
-    <a href="index.html">ℍ𝕆𝕄𝔼</a>
-    <a href="Productboygirl.html">ℙℝ𝕆𝔻𝕌ℂ𝕋𝕊</a> 
-    <a href="discount.html">𝕆𝔽𝔽𝔼ℝ𝕊</a> 
-    <a href="about.html">𝔸𝔹𝕆𝕌𝕋 𝕌𝕊</a>
-    <a href="contact.html">ℂ𝕆ℕ𝕋𝔸ℂ𝕋</a>
-    <a href="Game.html">ℙ𝕃𝔸𝕐 𝔾𝔸𝕄𝔼</a>
-</nav>
-    </div>
-
-
-    <!-- Header Section with Logo Image -->
-    <header>
-        <img src="LOGO.jpg" alt="Safa Marwa Shop Logo" class="logo-img" onerror="this.src='logo.jpg'; this.onerror=function(){ this.style.display='none'; this.after('🛍️ 𝕊𝔸𝔽𝔸 𝕄𝔸ℝ𝕎𝔸 ℍ𝔸𝔸𝕁ℝ𝔸'); };">
-    </header>
-
-    
-    <!-- Main Section -->
-    <div class="collection-container">
-        
-        <h1 class="page-title">Choose Collection</h1>
-        <p class="page-subtitle">Select a category to explore our latest collection</p>
-
-        <div class="cards-grid">
-
-            <!-- GIRLS COLLECTION CARD -->
-            <!-- Note: href mein apne girls page ka link lagayein jaise ke girls.html -->
-            <a href="girls.html" class="collection-card girls-card">
-                <div class="icon-circle"><img src="girldp1.jpg" style="width:100%; height:100%; border-radius:50%; object-fit:cover;"></div>
-                <div class="card-name">Girls Collection</div>
-                <div class="shop-btn">Explore Now</div>
-            </a>
-
-            <!-- BOYS COLLECTION CARD -->
-            <!-- Note: href mein apne boys page ka link lagayein jaise ke boys.html -->
-            <a href="Boys.html" class="collection-card boys-card">
-                <div class="icon-circle"><img src="boysdp1.jpg" style="width:100%; height:100%; border-radius:50%; object-fit:cover;"></div>
-                <div class="card-name">Boys Collection</div>
-                <div class="shop-btn">Explore Now</div>
-            </a>
-
-        </div>
-        </div>
-    </div>
-
 <!-- ================================================================= -->
 <!-- START OF REALISTIC VIRTUAL AQUARIUM GADGET                        -->
 <!-- ================================================================= -->
 <div class="aquarium-wrapper" style="width: 100%; max-width: 1100px; margin: 40px auto; padding: 0 20px; box-sizing: border-box; font-family: sans-serif;">
     
     <!-- Aquarium Frame -->
-    <div class="aquarium-tank" style="position: relative; width: 100%; height: 450px; background: linear-gradient(180deg, #1a4f7c 0%, #09203f 100%); border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.4); border: 6px solid #1e272e;">
+    <div class="aquarium-tank" style="position: relative; width: 100%; height: 450px; background: linear-gradient(180deg, #103154 0%, #051324 100%); border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.4); border: 6px solid #1e272e;">
         
         <!-- Water Surface Ripple & Sunlight Rays -->
-        <div class="water-rays" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% -30%, rgba(255,255,255,0.25) 0%, transparent 70%); pointer-events: none; z-index: 2;"></div>
-        
-        <!-- Deep Sea Ambient Light -->
-        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 50%; background: linear-gradient(0deg, rgba(0,212,255,0.1) 0%, transparent 100%); pointer-events: none; z-index: 1;"></div>
+        <div class="water-rays" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% -30%, rgba(255,255,255,0.2) 0%, transparent 70%); pointer-events: none; z-index: 2;"></div>
 
         <!-- Dynamic Bubbles Generator Container -->
         <div id="bubbles-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;"></div>
@@ -242,37 +15,35 @@
         <!-- 3D Swimming Fishes -->
         <div class="aquarium-fishes" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 3;">
             
-            <!-- Fish 1: Vibrant Orange Goldfish -->
-            <div class="fish fish-orange" style="position: absolute; top: 25%; width: 70px; height: 40px; background: linear-gradient(135deg, #ff7675, #e17055); border-radius: 50% 60% 50% 50%; animation: swimLeftToRight 14s infinite linear;">
-                <div class="eye" style="position: absolute; left: 12px; top: 10px; width: 8px; height: 8px; background: white; border-radius: 50%;"><div style="width: 4px; height: 4px; background: black; border-radius: 50%; margin: 2px;"></div></div>
-                <div class="tail" style="position: absolute; right: -20px; top: 5px; width: 0; height: 0; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-left: 25px solid #e17055; transform-origin: left center; animation: finWiggle 0.3s infinite ease-in-out;"></div>
-                <div class="fin" style="position: absolute; bottom: -8px; left: 30px; width: 15px; height: 12px; background: #ff7675; border-radius: 0 0 50% 50%; transform: rotate(-20deg);"></div>
+            <!-- Fish 1: Vibrant Orange Goldfish (Left to Right - Face is Forward) -->
+            <div class="fish fish-orange" style="position: absolute; top: 25%; width: 75px; height: 42px; background: linear-gradient(135deg, #ff7675, #e17055); border-radius: 50% 50% 50% 50%; animation: swimLeftToRight 14s infinite linear;">
+                <div class="eye" style="position: absolute; right: 14px; top: 12px; width: 8px; height: 8px; background: white; border-radius: 50%;"><div style="width: 4px; height: 4px; background: black; border-radius: 50%; margin: 2px;"></div></div>
+                <div class="tail" style="position: absolute; left: -18px; top: 6px; width: 0; height: 0; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-right: 22px solid #e17055; transform-origin: right center; animation: finWiggle 0.2s infinite ease-in-out;"></div>
+                <div class="fin" style="position: absolute; bottom: -6px; left: 25px; width: 14px; height: 10px; background: #e17055; border-radius: 0 0 50% 50%; transform: rotate(-10deg);"></div>
             </div>
 
-            <!-- Fish 2: Royal Blue Neon Angel Fish -->
-            <div class="fish fish-blue" style="position: absolute; top: 55%; width: 60px; height: 45px; background: linear-gradient(135deg, #00cec9, #0984e3); border-radius: 40% 40% 50% 50%; animation: swimRightToLeft 10s infinite linear;">
-                <div class="eye" style="position: absolute; right: 12px; top: 12px; width: 8px; height: 8px; background: white; border-radius: 50%;"><div style="width: 4px; height: 4px; background: black; border-radius: 50%; margin: 2px;"></div></div>
-                <div class="tail" style="position: absolute; left: -18px; top: 10px; width: 0; height: 0; border-top: 12px solid transparent; border-bottom: 12px solid transparent; border-right: 22px solid #0984e3; transform-origin: right center; animation: finWiggle 0.25s infinite ease-in-out;"></div>
-                <div class="fin-top" style="position: absolute; top: -15px; left: 20px; width: 12px; height: 20px; background: #00cec9; border-radius: 50% 50% 0 0; transform: skewX(-20deg);"></div>
+            <!-- Fish 2: Royal Blue Neon Fish (Right to Left - Properly Flipped) -->
+            <div class="fish fish-blue" style="position: absolute; top: 55%; width: 65px; height: 38px; background: linear-gradient(135deg, #00cec9, #0984e3); border-radius: 50% 50% 50% 50%; animation: swimRightToLeft 11s infinite linear;">
+                <div class="eye" style="position: absolute; right: 12px; top: 10px; width: 7px; height: 7px; background: white; border-radius: 50%;"><div style="width: 4px; height: 4px; background: black; border-radius: 50%; margin: 1.5px;"></div></div>
+                <div class="tail" style="position: absolute; left: -16px; top: 5px; width: 0; height: 0; border-top: 14px solid transparent; border-bottom: 14px solid transparent; border-right: 20px solid #0984e3; transform-origin: right center; animation: finWiggle 0.25s infinite ease-in-out;"></div>
+                <div class="fin-top" style="position: absolute; top: -10px; left: 22px; width: 10px; height: 15px; background: #00cec9; border-radius: 50% 50% 0 0;"></div>
             </div>
 
-            <!-- Fish 3: Bright Yellow Tang Fish -->
-            <div class="fish fish-yellow" style="position: absolute; top: 12%; width: 65px; height: 42px; background: linear-gradient(135deg, #ffeaa7, #fdcb6e); border-radius: 50%; animation: swimLeftToRight 18s infinite linear; animation-delay: 3s;">
-                <div class="eye" style="position: absolute; left: 12px; top: 10px; width: 7px; height: 7px; background: white; border-radius: 50%;"><div style="width: 3px; height: 3px; background: black; border-radius: 50%; margin: 2px;"></div></div>
-                <div class="tail" style="position: absolute; right: -18px; top: 8px; width: 0; height: 0; border-top: 13px solid transparent; border-bottom: 13px solid transparent; border-left: 22px solid #fdcb6e; animation: finWiggle 0.35s infinite ease-in-out;"></div>
+            <!-- Fish 3: Bright Yellow Tang Fish (Left to Right - Face is Forward) -->
+            <div class="fish fish-yellow" style="position: absolute; top: 15%; width: 70px; height: 45px; background: linear-gradient(135deg, #ffeaa7, #fdcb6e); border-radius: 50% 50% 50% 50%; animation: swimLeftToRight 18s infinite linear; animation-delay: 3s;">
+                <div class="eye" style="position: absolute; right: 14px; top: 12px; width: 8px; height: 8px; background: white; border-radius: 50%;"><div style="width: 4px; height: 4px; background: black; border-radius: 50%; margin: 2px;"></div></div>
+                <div class="tail" style="position: absolute; left: -18px; top: 8px; width: 0; height: 0; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-right: 22px solid #fdcb6e; transform-origin: right center; animation: finWiggle 0.3s infinite ease-in-out;"></div>
             </div>
             
         </div>
 
         <!-- Realistic Seabed Decoration -->
-        <div class="seabed" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 35px; background: linear-gradient(0deg, #d3b8ae 0%, #bcaaa4 100%); border-top: 3px solid #8d6e63; z-index: 4;"></div>
+        <div class="seabed" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 35px; background: linear-gradient(0deg, #c4a497 0%, #b39182 100%); border-top: 3px solid #7a5e54; z-index: 4;"></div>
 
         <!-- Animated Water Plants (Seaweed) -->
         <div class="plants" style="position: absolute; bottom: 25px; width: 100%; height: 160px; pointer-events: none; z-index: 4;">
-            <!-- Left Plant -->
             <div style="position: absolute; bottom: 0; left: 8%; width: 35px; height: 140px; background: radial-gradient(circle, #2ecc71, #27ae60); border-radius: 50% 50% 0 0; opacity: 0.85; transform-origin: bottom center; animation: seaweedSway 5s infinite ease-in-out;"></div>
-            <div style="position: absolute; bottom: 0; left: 10%; width: 25px; height: 100px; background: radial-gradient(circle, #a3cb38, #009432); border-radius: 50% 50% 0 0; opacity: 0.9; transform-origin: bottom center; animation: seaweedSway 4s infinite ease-in-out; animation-delay: 0.5s;"></div>
-            <!-- Right Plant -->
+            <div style="position: absolute; bottom: 0; left: 11%; width: 25px; height: 100px; background: radial-gradient(circle, #a3cb38, #009432); border-radius: 50% 50% 0 0; opacity: 0.9; transform-origin: bottom center; animation: seaweedSway 4s infinite ease-in-out; animation-delay: 0.5s;"></div>
             <div style="position: absolute; bottom: 0; right: 12%; width: 40px; height: 160px; background: radial-gradient(circle, #2ecc71, #27ae60); border-radius: 50% 50% 0 0; opacity: 0.85; transform-origin: bottom center; animation: seaweedSway 6s infinite ease-in-out; animation-delay: 1s;"></div>
             <div style="position: absolute; bottom: 0; right: 9%; width: 30px; height: 110px; background: radial-gradient(circle, #12cbd6, #0f8ba3); border-radius: 50% 50% 0 0; opacity: 0.75; transform-origin: bottom center; animation: seaweedSway 4.5s infinite ease-in-out; animation-delay: 0.2s;"></div>
         </div>
@@ -287,38 +58,36 @@
 /* Seaweed Swaying Effect */
 @keyframes seaweedSway {
     0%, 100% { transform: rotate(0deg) skewX(0deg); }
-    50% { transform: rotate(6deg) skewX(4deg); }
+    50% { transform: rotate(5deg) skewX(3deg); }
 }
 
 /* Fin Wiggling Animation */
 @keyframes finWiggle {
     0%, 100% { transform: rotate(0deg); }
-    50% { transform: rotate(15deg); }
+    50% { transform: rotate(12deg); }
 }
 
-/* Fish Swimming Left to Right */
+/* Fish Swimming Left to Right (Face stays forward) */
 @keyframes swimLeftToRight {
     0% { left: -90px; transform: scaleX(1) translateY(0px); }
-    30% { translateY(-15px); }
-    70% { translateY(15px); }
+    50% { translateY(-15px); }
     100% { left: 105%; transform: scaleX(1) translateY(0px); }
 }
 
-/* Fish Swimming Right to Left */
+/* Fish Swimming Right to Left (Flipped perfectly so it does not swim backwards) */
 @keyframes swimRightToLeft {
-    0% { right: -90px; transform: scaleX(1) translateY(0px); }
-    40% { translateY(20px); }
-    80% { translateY(-10px); }
-    100% { right: 105%; transform: scaleX(1) translateY(0px); }
+    0% { right: -90px; transform: scaleX(-1) translateY(0px); }
+    50% { translateY(15px); }
+    100% { right: 105%; transform: scaleX(-1) translateY(0px); }
 }
 
 /* Bubbles Floating Upwards */
 @keyframes bubbleRise {
     0% { transform: translateY(450px) translateX(0px); opacity: 0; scale: 0.6; }
-    10% { opacity: 0.7; }
-    50% { translateX(15px); }
+    10% { opacity: 0.6; }
+    50% { translateX(10px); }
     90% { opacity: 0.4; }
-    100% { transform: translateY(-50px) translateX(-10px); opacity: 0; scale: 1.3; }
+    100% { transform: translateY(-50px) translateX(-5px); opacity: 0; scale: 1.2; }
 }
 </style>
 
@@ -328,16 +97,14 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const container = document.getElementById("bubbles-container");
-    const totalBubbles = 15; // Tank mein lagatar chalne wale bulbulon ki tadad
+    const totalBubbles = 20;
 
     for (let i = 0; i < totalBubbles; i++) {
         let bubble = document.createElement("span");
-        
-        // Random placement and sizes for absolute realism
-        let size = Math.random() * 8 + 4; // 4px to 12px random sizes
-        let randomLeft = Math.random() * 90 + 5; // 5% to 95% width allocation
-        let duration = Math.random() * 5 + 4; // 4s to 9s float speeds
-        let delay = Math.random() * 6; // Staggered entry
+        let size = Math.random() * 6 + 3; 
+        let randomLeft = Math.random() * 90 + 5; 
+        let duration = Math.random() * 4 + 4; 
+        let delay = Math.random() * 5; 
 
         bubble.style.cssText = `
             position: absolute;
@@ -345,10 +112,10 @@ document.addEventListener("DOMContentLoaded", function () {
             left: ${randomLeft}%;
             width: ${size}px;
             height: ${size}px;
-            background: rgba(255, 255, 255, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.5);
             border-radius: 50%;
-            box-shadow: inset 0 2px 4px rgba(255,255,255,0.8);
+            box-shadow: inset 0 1px 3px rgba(255,255,255,0.6);
             animation: bubbleRise ${duration}s infinite linear;
             animation-delay: ${delay}s;
         `;
@@ -359,28 +126,3 @@ document.addEventListener("DOMContentLoaded", function () {
 <!-- ================================================================= -->
 <!-- END OF REALISTIC VIRTUAL AQUARIUM GADGET                          -->
 <!-- ================================================================= -->
-
-
-
-
-        <footer style="background:#0ba0e0;color:#fff;padding:05px 05px;margin-top:0px;text-align:center;">
-    <div style="max-width:100%;margin:auto;">
-            <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;">
-            <a href="privacy.html" style="color:#fff;text-decoration:none;">Privacy Policy</a>
-            <a href="terms.html" style="color:#fff;text-decoration:none;">Terms & Conditions</a>
-            <a href="shipping.html" style="color:#fff;text-decoration:none;">Shipping Policy</a>
-            <a href="return-refund.html" style="color:#fff;text-decoration:none;">Return & Refund</a>
-        </div>
-
-        <p style="margin-top:0px;margin-bottom:0px;font-size:14px;text-align:center;color:#fff;">
-            © 2026 Safa Marwa Haajra Shop. All Rights Reserved.
-        </p>
-
-    </div>
-</footer>
-
-
-    </div>
-
-</body>
-</html>
