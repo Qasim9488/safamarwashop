@@ -61,7 +61,7 @@ footer{text-align:center;color:#667786;font-size:13px;padding:22px}
 <header>
   <a class="logo" href="index.html">
     <img src="LOGO.jpg" alt="Safa Marwa Haajra Shop Logo" onerror="this.style.display='none'">
-    <span>Safa <b>Marwa<b>Haajra</b> Shop</span>
+    <span>Safa <b>Marwa <b>Haajra </b> Shop</span>
   </a>
   <a href="index.html">Shop</a>
 </header>
@@ -101,14 +101,6 @@ footer{text-align:center;color:#667786;font-size:13px;padding:22px}
       <div class="coupon" id="coupon"></div>
 
    
-    <aside class="side">
-      <div class="stats">
-        <div class="stat"><small>Score</small><strong id="score">0</strong></div>
-        <div class="stat"><small>Best</small><strong id="best">0</strong></div>
-        <div class="stat"><small>Garments</small><strong id="count">0</strong></div>
-        <div class="stat"><small>Level</small><strong id="level">1</strong></div>
-      </div>
-
       <div class="reward">
         Next Reward<br>
         <b id="target">3,000 points</b>
@@ -370,7 +362,14 @@ footer{text-align:center;color:#667786;font-size:13px;padding:22px}
     roundRectPath(18,16,canvas.width-36,48,14);
     ctx.fill();
 
-     if(!running && !gameOver && score===0){
+    ctx.fillStyle = "#17324d";
+    ctx.font = "bold 20px Arial";
+    ctx.textAlign = "left";
+    ctx.fillText("🐍 Collect the Garments!",35,47);
+    ctx.textAlign = "right";
+    ctx.fillText(score.toLocaleString()+" points",canvas.width-35,47);
+
+    if(!running && !gameOver && score===0){
       overlay("READY","Press START to play");
     } else if(paused){
       overlay("PAUSED","Press PAUSE to continue");
