@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Safa Marwa Haajra Garment Snake</title>
+<title>Safa Marwa Garment Snake</title>
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#eef8ff,#fff3f7);color:#17324d}
@@ -16,43 +16,28 @@ header>a:last-child{color:#1260a8;font-weight:700;text-decoration:none}
 .hero{text-align:center;margin-bottom:15px}
 .hero h1{margin:8px 0;font-size:30px}
 .hero p{margin:5px 0;color:#5e7080}
-.layout{display:flex;flex-direction:column;gap:12px}
-.card,.side{background:#fff;border-radius:20px;padding:14px;box-shadow:0 10px 30px rgba(18,50,77,.12)}
-.side{display:flex;flex-direction:column;gap:8px}
-.action-row{order:3;display:flex;gap:8px;width:100%}
-.side .stats{order:1}
-.side .reward{order:2}
-.side .coupon{order:4}
-.side .controls{order:5}
-.side .hint{order:6}
-.side:before{content:"GAME CONTROLS";display:block;order:0;text-align:center;font-size:11px;font-weight:800;letter-spacing:1.4px;color:#80909d;margin-bottom:-2px}
-canvas{display:block;width:100%;height:auto;background:#f7e6cc;border-radius:14px;border:2px solid #ead5b7;touch-action:none}
-.statusbar{display:flex;justify-content:space-between;gap:10px;margin-top:9px;font-size:13px;color:#667786}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-.stat{background:#f4f8fc;border-radius:12px;padding:11px}
-.stat small{color:#6d7e8c}.stat strong{display:block;font-size:24px;margin-top:3px}
-.reward{background:#fff1ad;border-radius:14px;padding:13px;margin:12px 0;text-align:center}
-.reward b{font-size:20px;color:#a44b00}
-.progress{height:9px;background:#d9e4ee;border-radius:20px;overflow:hidden;margin-top:9px}
-.progress i{display:block;height:100%;width:0;background:#18b979}
-button{border:0;border-radius:11px;padding:12px 16px;font-weight:800;cursor:pointer}
-.start{width:100%;background:#ed3674;color:#fff;font-size:16px;min-height:46px}
-.pause{width:100%;margin-top:0;background:#195c91;color:#fff;min-height:46px}
-.controls{display:grid;grid-template-columns:repeat(3,minmax(54px,90px));justify-content:center;gap:7px;margin-top:4px}
-.controls button{background:#195c91;color:#fff;font-size:20px;padding:10px}
+.layout{display:flex;flex-direction:column;gap:10px}
+.card{background:#fff;border-radius:20px;padding:10px;box-shadow:0 10px 30px rgba(18,50,77,.12)}
+.controls-panel{background:#fff;border-radius:20px;padding:12px;box-shadow:0 10px 30px rgba(18,50,77,.10)}
+.action-row{display:flex;gap:10px;width:100%;margin-bottom:10px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.stat{background:#f4f8fc;border-radius:12px;padding:10px}
+.controls{display:grid;grid-template-columns:repeat(3,72px);justify-content:center;gap:7px;margin:0 auto 11px}
+.controls button{background:#195c91;color:#fff;font-size:20px;padding:10px;min-height:44px}
 .controls .blank{visibility:hidden}
-.coupon{display:none;margin-top:12px;background:#e8fff4;border:2px dashed #18a66d;padding:12px;border-radius:13px;text-align:center}
-.coupon strong{font-size:23px;color:#078b58}
-.hint{font-size:13px;color:#667786;line-height:1.5}
+.action-row .start,.action-row .pause{flex:1}
+.hint{font-size:13px;color:#667786;line-height:1.5;margin:9px 0 2px}
 footer{text-align:center;color:#667786;font-size:13px;padding:22px}
 @media(max-width:800px){
  .hero h1{font-size:25px}
  .wrap{padding:0 8px}
  .card{padding:8px}
- .side{padding:10px}
+ .controls-panel{padding:9px}
 }
-@media(max-width:480px){
+@media(max-width:520px){
+ .stats{grid-template-columns:1fr 1fr}
  .action-row{flex-direction:column}
+ .controls{grid-template-columns:repeat(3,64px)}
 }
 </style>
 </head>
@@ -60,8 +45,8 @@ footer{text-align:center;color:#667786;font-size:13px;padding:22px}
 
 <header>
   <a class="logo" href="index.html">
-    <img src="LOGO.jpg" alt="Safa Marwa Haajra Shop Logo" onerror="this.style.display='none'">
-    <span>Safa <b>Marwa<b>Haajra</b> Shop</span>
+    <img src="logo.png" alt="Safa Marwa Shop Logo" onerror="this.style.display='none'">
+    <span>Safa <b>Marwa</b> Shop</span>
   </a>
   <a href="index.html">Shop</a>
 </header>
@@ -76,32 +61,26 @@ footer{text-align:center;color:#667786;font-size:13px;padding:22px}
     <div class="card">
       <canvas id="game" width="900" height="620"></canvas>
       <div class="statusbar">
-        <span>⌨️ Arrow / WASD • 📱 buttons • Space = pause</span>
+        <span>⌨️ Arrow / WASD • 📱 Swipe / buttons • Space = pause</span>
         <span id="status">Ready</span>
       </div>
     </div>
 
-
-   <div class="controls">
-        <button class="blank">•</button>
-        <button data-dir="up">↑</button>
-        <button class="blank">•</button>
-        <button data-dir="left">←</button>
-        <button data-dir="down">↓</button>
-        <button data-dir="right">→</button>
-      </div>
-    </div>
-  </div>
-
-    <div class="action-row">
+    <div class="controls-panel">
+      <div class="action-row">
         <button class="start" id="start">START / RESTART GAME</button>
         <button class="pause" id="pause">PAUSE</button>
       </div>
 
-      <div class="coupon" id="coupon"></div>
+      <div class="controls">
+        <button class="blank" type="button">•</button>
+        <button data-dir="up" type="button">↑</button>
+        <button class="blank" type="button">•</button>
+        <button data-dir="left" type="button">←</button>
+        <button data-dir="down" type="button">↓</button>
+        <button data-dir="right" type="button">→</button>
+      </div>
 
-   
-    <aside class="side">
       <div class="stats">
         <div class="stat"><small>Score</small><strong id="score">0</strong></div>
         <div class="stat"><small>Best</small><strong id="best">0</strong></div>
@@ -111,22 +90,18 @@ footer{text-align:center;color:#667786;font-size:13px;padding:22px}
 
       <div class="reward">
         Next Reward<br>
-        <b id="target">3,000 points</b>
+        <b id="target">2,000 points</b>
         <div class="progress"><i id="progress"></i></div>
-        <small>3,000 = 10% OFF • 5,000 = 15% OFF</small>
+        <small>2,000 = 15% OFF • 3,000 = 25% OFF</small>
       </div>
 
-          
-
-      <p class="hint">
-        <b>How to play:</b> snake ko garments par le jao. Garment khane se snake lamba hota hai aur score milta hai.
-        Wall ya apni body se takrane par game over.
-      </p>
-    </aside>
+      <div class="coupon" id="coupon"></div>
+      <p class="hint"><b>How to play:</b> snake ko garments par le jao. Garment khane se snake lamba hota hai aur score milta hai. Wall ya apni body se takrane par game over.</p>
+    </div>
   </div>
 </div>
 
-<footer>Safa Marwa Haajra Shop • Children's Garments • Play • Collect • Save</footer>
+<footer>Safa Marwa Shop • Children's Garments • Play • Collect • Save</footer>
 
 <script>
 (function(){
@@ -140,16 +115,16 @@ footer{text-align:center;color:#667786;font-size:13px;padding:22px}
     return;
   }
 
-  var COLS = 30, ROWS = 21;
+  var COLS = 30, ROWS = 20;
   var CELL = canvas.width / COLS;
   var items = [
-    {emoji:"👕", points:20},
-    {emoji:"👗", points:20},
-    {emoji:"🧥", points:20},
-    {emoji:"👖", points:20},
-    {emoji:"🩳", points:20},
-    {emoji:"🧦", points:20},
-    {emoji:"👚", points:20}
+    {emoji:"👕", points:100},
+    {emoji:"👗", points:120},
+    {emoji:"🧥", points:150},
+    {emoji:"👖", points:130},
+    {emoji:"🩳", points:90},
+    {emoji:"🧦", points:70},
+    {emoji:"👚", points:110}
   ];
 
   var snake = [];
@@ -286,11 +261,11 @@ footer{text-align:center;color:#667786;font-size:13px;padding:22px}
     setText("count", String(foodCount));
     setText("level", String(1 + Math.floor(score/500)));
 
-    var target = score < 3000 ? 3000 : 5000;
-    if(score >= 5000){
+    var target = score < 2000 ? 2000 : 3000;
+    if(score >= 3000){
       setText("target","25% OFF UNLOCKED!");
-    } else if(score >= 3000){
-      setText("target","15% OFF — Next: 5,000");
+    } else if(score >= 2000){
+      setText("target","15% OFF — Next: 3,000");
     } else {
       setText("target",target.toLocaleString()+" points");
     }
@@ -299,12 +274,12 @@ footer{text-align:center;color:#667786;font-size:13px;padding:22px}
       Math.min(100, (score / target) * 100) + "%";
 
     var coupon = document.getElementById("coupon");
-    if(score >= 5000){
+    if(score >= 3000){
       coupon.style.display = "block";
       coupon.innerHTML = "<b>🎉 25% OFF</b><br>Coupon: <strong>SMGAME25</strong><br><small>Use this code when placing your order.</small>";
-    } else if(score >= 3000){
+    } else if(score >= 2000){
       coupon.style.display = "block";
-      coupon.innerHTML = "<b>🎁 15% OFF</b><br>Coupon: <strong>SMGAME15</strong><br><small>Reach 5,000 for 25% OFF.</small>";
+      coupon.innerHTML = "<b>🎁 15% OFF</b><br>Coupon: <strong>SMGAME15</strong><br><small>Reach 3,000 for 25% OFF.</small>";
     } else {
       coupon.style.display = "none";
     }
@@ -373,7 +348,6 @@ footer{text-align:center;color:#667786;font-size:13px;padding:22px}
     ctx.fillStyle = "#17324d";
     ctx.font = "bold 20px Arial";
     ctx.textAlign = "left";
-    ctx.fillText("🐍 Collect the Garments!",35,47);
     ctx.textAlign = "right";
     ctx.fillText(score.toLocaleString()+" points",canvas.width-35,47);
 
