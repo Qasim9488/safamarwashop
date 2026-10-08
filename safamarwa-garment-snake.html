@@ -108,9 +108,9 @@ footer{text-align:center;color:#667786;font-size:13px;padding:22px}
 
       <div class="reward">
         Next Reward<br>
-        <b id="target">2,000 points</b>
+        <b id="target">3,000 points</b>
         <div class="progress"><i id="progress"></i></div>
-        <small>2,000 = 15% OFF • 3,000 = 25% OFF</small>
+        <small>3,000 = 10% OFF • 5,000 = 20% OFF</small>
       </div>
    
      <div class="coupon" id="coupon"></div>
@@ -367,12 +367,7 @@ footer{text-align:center;color:#667786;font-size:13px;padding:22px}
     roundRectPath(18,16,canvas.width-36,48,14);
     ctx.fill();
 
-    ctx.fillStyle = "#17324d";
-    ctx.font = "bold 20px Arial";
-    ctx.textAlign = "left";
-    ctx.fillText("🐍 Collect the Garments!",35,47);
-    ctx.textAlign = "right";
-    ctx.fillText(score.toLocaleString()+" points",canvas.width-35,47);
+   
 
     if(!running && !gameOver && score===0){
       overlay("READY","Press START to play");
@@ -383,23 +378,7 @@ footer{text-align:center;color:#667786;font-size:13px;padding:22px}
     }
   }
 
-  function overlay(title, subtitle){
-    ctx.fillStyle = "rgba(0,0,0,.58)";
-    ctx.fillRect(0,0,canvas.width,canvas.height);
-    ctx.fillStyle = "#fff";
-    ctx.textAlign = "center";
-    ctx.font = "bold 42px Arial";
-    ctx.fillText(title,canvas.width/2,canvas.height/2-10);
-    ctx.font = "20px Arial";
-    ctx.fillText(subtitle,canvas.width/2,canvas.height/2+30);
-  }
-
-  function loop(t){
-    if(!running) return;
-    if(!paused && t-lastStep >= speed()){
-      step();
-      lastStep = t;
-    }
+  
     draw();
     requestAnimationFrame(loop);
   }
