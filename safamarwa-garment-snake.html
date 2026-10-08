@@ -81,6 +81,24 @@ footer{text-align:center;color:#667786;font-size:13px;padding:22px}
       </div>
     </div>
 
+
+   <div class="controls">
+        <button class="blank">•</button>
+        <button data-dir="up">↑</button>
+        <button class="blank">•</button>
+        <button data-dir="left">←</button>
+        <button data-dir="down">↓</button>
+        <button data-dir="right">→</button>
+      </div>
+
+    <div class="action-row">
+        <button class="start" id="start">START / RESTART GAME</button>
+        <button class="pause" id="pause">PAUSE</button>
+      </div>
+
+      <div class="coupon" id="coupon"></div>
+
+   
     <aside class="side">
       <div class="stats">
         <div class="stat"><small>Score</small><strong id="score">0</strong></div>
@@ -91,26 +109,12 @@ footer{text-align:center;color:#667786;font-size:13px;padding:22px}
 
       <div class="reward">
         Next Reward<br>
-        <b id="target">2,000 points</b>
+        <b id="target">3,000 points</b>
         <div class="progress"><i id="progress"></i></div>
-        <small>2,000 = 15% OFF • 3,000 = 25% OFF</small>
+        <small>3,000 = 10% OFF • 5,000 = 15% OFF</small>
       </div>
 
-      <div class="action-row">
-        <button class="start" id="start">START / RESTART GAME</button>
-        <button class="pause" id="pause">PAUSE</button>
-      </div>
-
-      <div class="coupon" id="coupon"></div>
-
-      <div class="controls">
-        <button class="blank">•</button>
-        <button data-dir="up">↑</button>
-        <button class="blank">•</button>
-        <button data-dir="left">←</button>
-        <button data-dir="down">↓</button>
-        <button data-dir="right">→</button>
-      </div>
+          
 
       <p class="hint">
         <b>How to play:</b> snake ko garments par le jao. Garment khane se snake lamba hota hai aur score milta hai.
@@ -120,7 +124,7 @@ footer{text-align:center;color:#667786;font-size:13px;padding:22px}
   </div>
 </div>
 
-<footer>Safa Marwa Shop • Children's Garments • Play • Collect • Save</footer>
+<footer>Safa Marwa Haajra Shop • Children's Garments • Play • Collect • Save</footer>
 
 <script>
 (function(){
@@ -134,16 +138,16 @@ footer{text-align:center;color:#667786;font-size:13px;padding:22px}
     return;
   }
 
-  var COLS = 30, ROWS = 20;
+  var COLS = 30, ROWS = 30;
   var CELL = canvas.width / COLS;
   var items = [
-    {emoji:"👕", points:100},
-    {emoji:"👗", points:120},
-    {emoji:"🧥", points:150},
-    {emoji:"👖", points:130},
-    {emoji:"🩳", points:90},
-    {emoji:"🧦", points:70},
-    {emoji:"👚", points:110}
+    {emoji:"👕", points:20},
+    {emoji:"👗", points:20},
+    {emoji:"🧥", points:20},
+    {emoji:"👖", points:20},
+    {emoji:"🩳", points:20},
+    {emoji:"🧦", points:20},
+    {emoji:"👚", points:20}
   ];
 
   var snake = [];
