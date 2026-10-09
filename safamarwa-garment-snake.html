@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Safa Marwa Garment Snake</title>
+<title>Safa Marwa Haajra Garment Snake</title>
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#eef8ff,#fff3f7);color:#17324d}
@@ -16,28 +16,43 @@ header>a:last-child{color:#1260a8;font-weight:700;text-decoration:none}
 .hero{text-align:center;margin-bottom:15px}
 .hero h1{margin:8px 0;font-size:30px}
 .hero p{margin:5px 0;color:#5e7080}
-.layout{display:flex;flex-direction:column;gap:10px}
-.card{background:#fff;border-radius:20px;padding:10px;box-shadow:0 10px 30px rgba(18,50,77,.12)}
-.controls-panel{background:#fff;border-radius:20px;padding:12px;box-shadow:0 10px 30px rgba(18,50,77,.10)}
-.action-row{display:flex;gap:10px;width:100%;margin-bottom:10px}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.stat{background:#f4f8fc;border-radius:12px;padding:10px}
-.controls{display:grid;grid-template-columns:repeat(3,72px);justify-content:center;gap:7px;margin:0 auto 11px}
-.controls button{background:#195c91;color:#fff;font-size:20px;padding:10px;min-height:44px}
+.layout{display:flex;flex-direction:column;gap:12px}
+.card,.side{background:#fff;border-radius:20px;padding:14px;box-shadow:0 10px 30px rgba(18,50,77,.12)}
+.side{display:flex;flex-direction:column;gap:8px}
+.action-row{order:3;display:flex;gap:8px;width:100%}
+.side .stats{order:1}
+.side .reward{order:2}
+.side .coupon{order:4}
+.side .controls{order:5}
+.side .hint{order:6}
+.side:before{content:"GAME CONTROLS";display:block;order:0;text-align:center;font-size:11px;font-weight:800;letter-spacing:1.4px;color:#80909d;margin-bottom:-2px}
+canvas{display:block;width:100%;height:auto;background:#f7e6cc;border-radius:14px;border:2px solid #ead5b7;touch-action:none}
+.statusbar{display:flex;justify-content:space-between;gap:10px;margin-top:9px;font-size:13px;color:#667786}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.stat{background:#f4f8fc;border-radius:12px;padding:11px}
+.stat small{color:#6d7e8c}.stat strong{display:block;font-size:24px;margin-top:3px}
+.reward{background:#fff1ad;border-radius:14px;padding:13px;margin:12px 0;text-align:center}
+.reward b{font-size:20px;color:#a44b00}
+.progress{height:9px;background:#d9e4ee;border-radius:20px;overflow:hidden;margin-top:9px}
+.progress i{display:block;height:100%;width:0;background:#18b979}
+button{border:0;border-radius:11px;padding:12px 16px;font-weight:800;cursor:pointer}
+.start{width:100%;background:#ed3674;color:#fff;font-size:16px;min-height:46px}
+.pause{width:100%;margin-top:0;background:#195c91;color:#fff;min-height:46px}
+.controls{display:grid;grid-template-columns:repeat(3,minmax(54px,90px));justify-content:center;gap:7px;margin-top:4px}
+.controls button{background:#195c91;color:#fff;font-size:20px;padding:10px}
 .controls .blank{visibility:hidden}
-.action-row .start,.action-row .pause{flex:1}
-.hint{font-size:13px;color:#667786;line-height:1.5;margin:9px 0 2px}
+.coupon{display:none;margin-top:12px;background:#e8fff4;border:2px dashed #18a66d;padding:12px;border-radius:13px;text-align:center}
+.coupon strong{font-size:23px;color:#078b58}
+.hint{font-size:13px;color:#667786;line-height:1.5}
 footer{text-align:center;color:#667786;font-size:13px;padding:22px}
 @media(max-width:800px){
  .hero h1{font-size:25px}
  .wrap{padding:0 8px}
  .card{padding:8px}
- .controls-panel{padding:9px}
+ .side{padding:10px}
 }
-@media(max-width:520px){
- .stats{grid-template-columns:1fr 1fr}
+@media(max-width:480px){
  .action-row{flex-direction:column}
- .controls{grid-template-columns:repeat(3,64px)}
 }
 </style>
 </head>
