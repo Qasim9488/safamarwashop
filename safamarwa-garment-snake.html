@@ -341,16 +341,7 @@ footer{text-align:center;color:#667786;font-size:13px;padding:22px}
       }
     });
 
-    // In-canvas score/header bar removed. Score is shown below the game canvas.
-
-    if(!running && !gameOver && score===0){
-      overlay("READY","Press START to play");
-    } else if(paused){
-      overlay("PAUSED","Press PAUSE to continue");
-    } else if(gameOver){
-      overlay("GAME OVER","Score: "+score.toLocaleString()+" • Press START");
-    }
-  }
+ if(!running && !gameOver && score===0){ overlay("READY","Press START to play"); } else if(paused){ overlay("PAUSED","Press PAUSE to continue"); } else if(gameOver){ overlay("GAME OVER","Score: "+score.toLocaleString()+" • Press START"); } }
 
   function overlay(title, subtitle){
     ctx.fillStyle = "rgba(0,0,0,.58)";
