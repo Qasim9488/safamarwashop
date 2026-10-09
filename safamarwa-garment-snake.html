@@ -46,7 +46,7 @@ footer{text-align:center;color:#667786;font-size:13px;padding:22px}
 <header>
   <a class="logo" href="index.html">
     <img src="logo.png" alt="Safa Marwa Shop Logo" onerror="this.style.display='none'">
-    <span>Safa <b>Marwa<b>Haajra</b>b> Shop</span>
+    <span>Safa <b>Marwa<b>Haajra</b> Shop</span>
   </a>
   <a href="index.html">Shop</a>
 </header>
@@ -261,11 +261,11 @@ footer{text-align:center;color:#667786;font-size:13px;padding:22px}
     setText("count", String(foodCount));
     setText("level", String(1 + Math.floor(score/500)));
 
-    var target = score < 2000 ? 2000 : 3000;
-    if(score >= 3000){
-      setText("target","25% OFF UNLOCKED!");
-    } else if(score >= 2000){
-      setText("target","15% OFF — Next: 3,000");
+    var target = score < 3000 ? 3000 : 5000;
+    if(score >= 5000){
+      setText("target","15% OFF UNLOCKED!");
+    } else if(score >= 3000){
+      setText("target","10% OFF — Next: 5,000");
     } else {
       setText("target",target.toLocaleString()+" points");
     }
@@ -274,12 +274,12 @@ footer{text-align:center;color:#667786;font-size:13px;padding:22px}
       Math.min(100, (score / target) * 100) + "%";
 
     var coupon = document.getElementById("coupon");
-    if(score >= 3000){
+    if(score >= 5000){
       coupon.style.display = "block";
-      coupon.innerHTML = "<b>🎉 25% OFF</b><br>Coupon: <strong>SMGAME25</strong><br><small>Use this code when placing your order.</small>";
-    } else if(score >= 2000){
+      coupon.innerHTML = "<b>🎉 15% OFF</b><br>Coupon: <strong>SMGAME25</strong><br><small>Use this code when placing your order.</small>";
+    } else if(score >= 3000){
       coupon.style.display = "block";
-      coupon.innerHTML = "<b>🎁 15% OFF</b><br>Coupon: <strong>SMGAME15</strong><br><small>Reach 3,000 for 25% OFF.</small>";
+      coupon.innerHTML = "<b>🎁 10% OFF</b><br>Coupon: <strong>SMGAME15</strong><br><small>Reach 3,000 for 10% OFF.</small>";
     } else {
       coupon.style.display = "none";
     }
